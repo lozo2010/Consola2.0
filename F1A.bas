@@ -1,5 +1,5 @@
 ﻿Type=Activity
-Version=5.5
+Version=5.2
 ModulesStructureVersion=1
 B4A=true
 @EndOfDesignText@
@@ -206,9 +206,9 @@ spServo.Add("GANCHO/FLAPS 5")
 	
 	spconfig.Add("PULSE AQUI")
 	spconfig.Add("PRUEBA")
-	spconfig.Add("PRIMERA HORA")
-	spconfig.Add("VIENTO ALTO")
-	spconfig.Add("VIENTO MEDIO")
+	spconfig.Add("1ª.HORA")
+	spconfig.Add("V.ALTO")
+	spconfig.Add("V.MEDIO")
 	spconfig.Add("CALMA")
 	spconfig.Add("TERMICA")
 	spconfig.TextSize=23
@@ -1819,7 +1819,7 @@ spServo.Background=BC1
 	ime1.HideKeyboard
 	Panel1.Visible=True
 	Label5.Visible=True
-	lbNumeroServo.Visible=True
+	'lbNumeroServo.Visible=True
 	
 	
 	etGiro.Enabled=False
@@ -2881,13 +2881,13 @@ ToastMessageShow(numpos,True)
 	If strspinner="PRUEBA" Then
 		spconfig.SelectedIndex=1
 	End If 
-	If strspinner="PRIMERA HORA" Then
+	If strspinner="1ª.HORA" Then
 		spconfig.SelectedIndex=2
 	End If 
-	If strspinner="VIENTO ALTO" Then
+	If strspinner="V.ALTO" Then
 		spconfig.SelectedIndex=3
 	End If 
-		If strspinner="VIENTO MEDIO" Then
+		If strspinner="V.MEDIO" Then
 		spconfig.SelectedIndex=4
 	End If 
 	If strspinner="CALMA" Then
@@ -2904,17 +2904,17 @@ ToastMessageShow(numpos,True)
 	
 			lbModelo.Text=NOMBRE_FICHERO
 			strModelo="Modelo_F1A_"&NOMBRE_FICHERO
-	lista1=File.ReadList(File.DirRootExternal & "/Consola/F1A","Modelo_F1A_"&NOMBRE_FICHERO)
-	listaconfiguracion=File.ReadList(File.DirRootExternal & "/Consola/F1A/configuracion","Modelo_F1A_"&NOMBRE_FICHERO)
+			lista1=File.ReadList(File.DirRootExternal & "/Consola/F1A","Modelo_F1A_"&NOMBRE_FICHERO)
+			listaconfiguracion=File.ReadList(File.DirRootExternal & "/Consola/F1A/configuracion","Modelo_F1A_"&NOMBRE_FICHERO)
 
 
-	If listaconfiguracion.Get(0)="0" Then
-		cbled.Checked=False
-	End If
-	
-	If listaconfiguracion.Get(0)="1" Then
-		cbled.Checked=True
-	End If
+			If listaconfiguracion.Get(0)="0" Then
+				cbled.Checked=False
+			End If
+			
+			If listaconfiguracion.Get(0)="1" Then
+				cbled.Checked=True
+			End If
 '			For i=0 To 4
 '			    lvDatos.SingleLineLayout.Label.TextColor=Colors.Black
 '				lvDatos.AddSingleLine("Servo "&(i+1)&"   Giro: "&lista1.Get(i)&"  REMOLQUE")
@@ -2986,90 +2986,90 @@ ToastMessageShow(numpos,True)
 				lvDatos.SingleLineLayout.Label.TextColor=Colors.Black
 				lvDatos.AddSingleLine("GANCHO/FLAP 5   Giro: "&lista1.Get(19)&"  PRE-START")	
 
-			Log("Tamaño Lista "&lista1.Size)
-			
-			For i=20 To lista1.Size-1 Step 4
-				tiempo_aux=lista1.Get(i) 
-				tiempo_minimo=lista1.get(i)
-				Log("Tiempo actual " &tiempo_minimo)
-				tipo_tiempo_aux=lista1.Get(i+1)
-				servo_aux=lista1.Get(i+2)
-				
-								If tipo_tiempo_aux=0 Then
-					tiempo_minimo=tiempo_minimo
-				
-				End If
-				
-				If tipo_tiempo_aux=1 Then
-					tiempo_minimo=tiempo_minimo*10
-				
-				End If
-				
-				If tipo_tiempo_aux=2 Then
-					tiempo_minimo=tiempo_minimo*600
-				
-				End If
-				
-				
-				If servo_aux=1 Then
-					servo_aux_nombre="INC.STABILO 1"
-				End If 
-				If servo_aux=2 Then
-					servo_aux_nombre="DIRECCION   2"
-				End If 
-				If servo_aux=3 Then
-					servo_aux_nombre="C.INCI.ALAS 3"
-				End If 
-				If servo_aux=4 Then
-					servo_aux_nombre="FLAPPER     4"
-				End If 
-				If servo_aux=5 Then
-					servo_aux_nombre="GANCHO/FLAP 5"
-				End If 
-				giro_aux=lista1.Get(i+3)
-				If tipo_tiempo_aux="0" Then
-				tipo_tiempo_aux="DECIMAS"
-				End If
-				
-				If tipo_tiempo_aux="1" Then
-				tipo_tiempo_aux="SEGUNDOS"
-				End If
-				
-				If tipo_tiempo_aux="2" Then
-				tipo_tiempo_aux="MINUTOS"
-				End If
-			    lvDatos.SingleLineLayout.Label.TextColor=Colors.Black
-				'lvDatos.AddSingleLine("Servo "&servo_aux&"   Giro: "&giro_aux&"    Tiempo: "&tiempo_aux&"  Tipo tiempo: "&tipo_tiempo_aux)
-				lvDatos.AddSingleLine(servo_aux_nombre&"   Giro: "&giro_aux&"    Tiempo: "&tiempo_aux&"  Tipo tiempo: "&tipo_tiempo_aux)
-			
-			Next
-		spServo.Visible=True
-		spTiempo.Visible=True
-		Label2.Visible=True
-		Panel3.Visible=True
-		Label4.Visible=True
-		Panel4.Visible=True
-		etTiempo.Visible=True
-		Label9.Visible=False
-		Label8.Visible=False 
-		lbNumeroServo.Text=""
-				lbservotxt.Text=""
+					Log("Tamaño Lista "&lista1.Size)
+					
+					For i=20 To lista1.Size-1 Step 4
+						tiempo_aux=lista1.Get(i) 
+						tiempo_minimo=lista1.get(i)
+						Log("Tiempo actual " &tiempo_minimo)
+						tipo_tiempo_aux=lista1.Get(i+1)
+						servo_aux=lista1.Get(i+2)
+						
+										If tipo_tiempo_aux=0 Then
+							tiempo_minimo=tiempo_minimo
+						
+						End If
+						
+						If tipo_tiempo_aux=1 Then
+							tiempo_minimo=tiempo_minimo*10
+						
+						End If
+						
+						If tipo_tiempo_aux=2 Then
+							tiempo_minimo=tiempo_minimo*600
+						
+						End If
+						
+						
+						If servo_aux=1 Then
+							servo_aux_nombre="INC.STABILO 1"
+						End If 
+						If servo_aux=2 Then
+							servo_aux_nombre="DIRECCION   2"
+						End If 
+						If servo_aux=3 Then
+							servo_aux_nombre="C.INCI.ALAS 3"
+						End If 
+						If servo_aux=4 Then
+							servo_aux_nombre="FLAPPER     4"
+						End If 
+						If servo_aux=5 Then
+							servo_aux_nombre="GANCHO/FLAP 5"
+						End If 
+						giro_aux=lista1.Get(i+3)
+						If tipo_tiempo_aux="0" Then
+						tipo_tiempo_aux="DECIMAS"
+						End If
+						
+						If tipo_tiempo_aux="1" Then
+						tipo_tiempo_aux="SEGUNDOS"
+						End If
+						
+						If tipo_tiempo_aux="2" Then
+						tipo_tiempo_aux="MINUTOS"
+						End If
+					    lvDatos.SingleLineLayout.Label.TextColor=Colors.Black
+						'lvDatos.AddSingleLine("Servo "&servo_aux&"   Giro: "&giro_aux&"    Tiempo: "&tiempo_aux&"  Tipo tiempo: "&tipo_tiempo_aux)
+						lvDatos.AddSingleLine(servo_aux_nombre&"   Giro: "&giro_aux&"    Tiempo: "&tiempo_aux&"  Tipo tiempo: "&tipo_tiempo_aux)
+					
+					Next
+				spServo.Visible=True
+				spTiempo.Visible=True
+				Label2.Visible=True
+				Panel3.Visible=True
+				Label4.Visible=True
+				Panel4.Visible=True
+				etTiempo.Visible=True
+				Label9.Visible=False
+				Label8.Visible=False 
+				lbNumeroServo.Text=""
+						lbservotxt.Text=""
 
-		btOK.Enabled=False
-		btOK.Visible=False
-		Button1.Enabled=True
-		Button1.Visible=True
-		contador_lineas=22
-		Panel1.Visible=True
-				Button1.Enabled=False
-		Button1.Visible=True
-		spTiempo.Enabled=False
-		etTiempo.Enabled=False
-		etGiro.Enabled=False
-	Panel2.Visible=True
-	Label5.Visible=True
-	lbNumeroServo.Visible=False'true
-	lbservotxt.Visible=True
+				btOK.Enabled=False
+				btOK.Visible=False
+				Button1.Enabled=True
+				Button1.Visible=True
+				contador_lineas=22
+				Panel1.Visible=True
+						Button1.Enabled=False
+				Button1.Visible=True
+				spTiempo.Enabled=False
+				etTiempo.Enabled=False
+				etGiro.Enabled=False
+			Panel2.Visible=True
+			Label5.Visible=True
+			lbNumeroServo.Visible=False'true
+			lbservotxt.Visible=True
 	
 	
 	End If	
@@ -3085,7 +3085,7 @@ ToastMessageShow(numpos,True)
 			'	NOMBRE_FICHERO=etFichero.Text & " " & config
 			lbModelo.Text=NOMBRE_FICHERO
 			strModelo="Modelo_F1A_"&NOMBRE_FICHERO
-lvDatos.Clear
+'lvDatos.Clear
 Panel1.Visible=False
 		spServo.Visible=False
 		spTiempo.Visible=False
@@ -3098,7 +3098,7 @@ Panel1.Visible=False
 		Label8.Visible=True 
 			Panel2.Visible=True
 	Label5.Visible=True
-	lbNumeroServo.Visible=True
+	'lbNumeroServo.Visible=True
 	tiempo_minimo=0
 		lbNumeroServo.Text="STABILO"
 		lbservotxt.Text="STABILO"
@@ -3133,14 +3133,14 @@ Sub Abrir_Fichero_leido (nombre As String)
 			If nombre.Contains("PRUEBA") Then
 				strspinner="PRUEBA"
 			End If 		
-			If nombre.Contains("PRIMERA HORA") Then
-				strspinner="PRIMERA HORA"
+			If nombre.Contains("1ª.HORA") Then
+				strspinner="1ª.HORA"
 			End If 	
-			If nombre.Contains("VIENTO ALTO") Then
-				strspinner="VIENTO ALTO"
+			If nombre.Contains("V.ALTO") Then
+				strspinner="V.ALTO"
 			End If 	
-			If nombre.Contains("VIENTO MEDIO") Then
-				strspinner="VIENTO MEDIO"
+			If nombre.Contains("V.MEDIO") Then
+				strspinner="V.MEDIO"
 			End If 	
 			If nombre.Contains("CALMA") Then
 				strspinner="CALMA"

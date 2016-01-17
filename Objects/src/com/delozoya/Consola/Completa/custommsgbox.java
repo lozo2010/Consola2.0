@@ -15,12 +15,13 @@ public class custommsgbox extends B4AClass.ImplB4AClass implements BA.SubDelegat
                 ba.loadHtSubs(this.getClass());
                 htSubs = ba.htSubs;
             }
-            
+            if (BA.isShellModeRuntimeCheck(ba)) {
+			    ba.raiseEvent2(null, true, "CREATE", true, "com.delozoya.Consola.Completa.custommsgbox",
+                    ba);
+                return;
+		    }
         }
-        if (BA.isShellModeRuntimeCheck(ba)) 
-			   this.getClass().getMethod("_class_globals", com.delozoya.Consola.Completa.custommsgbox.class).invoke(this, new Object[] {null});
-        else
-            ba.raiseEvent2(null, true, "class_globals", false);
+        ba.raiseEvent2(null, true, "class_globals", false);
     }
 
  public anywheresoftware.b4a.keywords.Common __c = null;
@@ -44,7 +45,6 @@ public String _msgboxevent = "";
 public String _buttonselected = "";
 public com.delozoya.Consola.Completa.main _main = null;
 public com.delozoya.Consola.Completa.f1a _f1a = null;
-public com.delozoya.Consola.Completa.f1b1 _f1b1 = null;
 public com.delozoya.Consola.Completa.f1c _f1c = null;
 public com.delozoya.Consola.Completa.f1b _f1b = null;
 public String  _backpanel_touch(int _action,float _x,float _y) throws Exception{
@@ -331,18 +331,18 @@ _su = new anywheresoftware.b4a.objects.StringUtils();
 _locate = BA.NumberToString(__c.Gravity.LEFT);
  //BA.debugLineNum = 200;BA.debugLine="Select Case Alignment.ToUpperCase";
 switch (BA.switchObjectToInt(_alignment.toUpperCase(),"L","C","R")) {
-case 0: {
+case 0:
  //BA.debugLineNum = 204;BA.debugLine="Locate = Gravity.LEFT";
 _locate = BA.NumberToString(__c.Gravity.LEFT);
- break; }
-case 1: {
+ break;
+case 1:
  //BA.debugLineNum = 208;BA.debugLine="Locate = Gravity.CENTER";
 _locate = BA.NumberToString(__c.Gravity.CENTER);
- break; }
-case 2: {
+ break;
+case 2:
  //BA.debugLineNum = 212;BA.debugLine="Locate = Gravity.RIGHT";
 _locate = BA.NumberToString(__c.Gravity.RIGHT);
- break; }
+ break;
 }
 ;
  //BA.debugLineNum = 216;BA.debugLine="Message.TextColor=Colors.Black";
@@ -368,18 +368,18 @@ _su = new anywheresoftware.b4a.objects.StringUtils();
 _locate = BA.NumberToString(__c.Gravity.LEFT);
  //BA.debugLineNum = 233;BA.debugLine="Select Case Alignment.ToUpperCase";
 switch (BA.switchObjectToInt(_alignment.toUpperCase(),"L","C","R")) {
-case 0: {
+case 0:
  //BA.debugLineNum = 237;BA.debugLine="Locate = Gravity.LEFT";
 _locate = BA.NumberToString(__c.Gravity.LEFT);
- break; }
-case 1: {
+ break;
+case 1:
  //BA.debugLineNum = 241;BA.debugLine="Locate = Gravity.CENTER";
 _locate = BA.NumberToString(__c.Gravity.CENTER);
- break; }
-case 2: {
+ break;
+case 2:
  //BA.debugLineNum = 245;BA.debugLine="Locate = Gravity.RIGHT";
 _locate = BA.NumberToString(__c.Gravity.RIGHT);
- break; }
+ break;
 }
 ;
  //BA.debugLineNum = 249;BA.debugLine="Message.Text = BoxMessage";
@@ -404,7 +404,7 @@ _lineseparator.Initialize((android.view.View)(_panel.getObject()));
 _lineseparator.DrawLine((float) (__c.DipToCurrent((int) (0))),(float) (__c.DipToCurrent((int) (65))),(float) (__c.PerXToCurrent((float) (100),ba)),(float) (__c.DipToCurrent((int) (65))),_titleseparator,(float) (3));
  //BA.debugLineNum = 264;BA.debugLine="LineSeparator.DrawLine(0dip, YesButtonPanel";
 _lineseparator.DrawLine((float) (__c.DipToCurrent((int) (0))),(float) (_yesbuttonpanel.getTop()-__c.DipToCurrent((int) (2))),(float) (__c.PerXToCurrent((float) (100),ba)),(float) (_yesbuttonpanel.getTop()-__c.DipToCurrent((int) (2))),_buttonseparator,(float) (1));
- //BA.debugLineNum = 266;BA.debugLine="If MsgNumberOfButtons = 2 AND MsgOrientatio";
+ //BA.debugLineNum = 266;BA.debugLine="If MsgNumberOfButtons = 2 And MsgOrientatio";
 if (_msgnumberofbuttons==2 && (_msgorientation.toUpperCase()).equals("V") == false) { 
  //BA.debugLineNum = 268;BA.debugLine="LineSeparator.DrawLine(Panel.Width / 2,";
 _lineseparator.DrawLine((float) (_panel.getWidth()/(double)2),(float) (_yesbuttonpanel.getTop()-__c.DipToCurrent((int) (2))),(float) (_panel.getWidth()/(double)2),(float) (_panel.getHeight()),_buttonseparator,(float) (1));
@@ -412,7 +412,7 @@ _lineseparator.DrawLine((float) (_panel.getWidth()/(double)2),(float) (_yesbutto
  //BA.debugLineNum = 272;BA.debugLine="LineSeparator.DrawLine(0dip, NoButtonPan";
 _lineseparator.DrawLine((float) (__c.DipToCurrent((int) (0))),(float) (_nobuttonpanel.getTop()-__c.DipToCurrent((int) (2))),(float) (_panel.getWidth()),(float) (_nobuttonpanel.getTop()-__c.DipToCurrent((int) (2))),_buttonseparator,(float) (1));
  };
- //BA.debugLineNum = 276;BA.debugLine="If MsgNumberOfButtons = 3 AND MsgOrientatio";
+ //BA.debugLineNum = 276;BA.debugLine="If MsgNumberOfButtons = 3 And MsgOrientatio";
 if (_msgnumberofbuttons==3 && (_msgorientation.toUpperCase()).equals("V") == false) { 
  //BA.debugLineNum = 278;BA.debugLine="LineSeparator.DrawLine(Panel.Width / 3,";
 _lineseparator.DrawLine((float) (_panel.getWidth()/(double)3),(float) (_yesbuttonpanel.getTop()-__c.DipToCurrent((int) (2))),(float) (_panel.getWidth()/(double)3),(float) (_panel.getHeight()),_buttonseparator,(float) (1));

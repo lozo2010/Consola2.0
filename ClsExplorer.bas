@@ -1,5 +1,5 @@
 ﻿Type=Class
-Version=5.5
+Version=5.2
 ModulesStructureVersion=1
 B4A=true
 @EndOfDesignText@
@@ -120,6 +120,7 @@ Private Sub AddEntry(ID As Int, Text1 As String, Text2 As String, WithCheckbox A
 	Dim pnl As Panel: pnl.Initialize("")
 	Dim Margin As Int: Margin = 5dip
 	Dim PosX As Int: PosX = Margin
+	Log(Text1)
 
 	Dim chk As CheckBox
 	If WithCheckbox Then
@@ -204,6 +205,7 @@ Private Sub ReadFolder(Chemin As String)
 					For f = 0 To lstFiltre.Size - 1
 						If NomFichier.EndsWith(lstFiltre.Get(f)) Then
 							lstF.Add(lst.Get(i))
+							
 							Exit
 						End If
 					Next
@@ -269,7 +271,7 @@ Public Sub Explorer
 	Dim Largeur, Hauteur As Int
 	Largeur = DialogRect.Right - DialogRect.Left
 	Hauteur = DialogRect.Bottom - DialogRect.Top
-	pnlFiles.AddView(svFichiers, Margin, Margin, Largeur - (2*MarginBord) - (2*Margin), Hauteur - (2*MarginBord) - (2*Margin) - HauteurCartouche)
+	pnlFiles.AddView(svFichiers, Margin, Margin, Largeur - (2*MarginBord) - (2*Margin), Hauteur - (2*MarginBord) - (10*Margin) - HauteurCartouche)
 	r.Target = svFichiers
 	r.SetOnKeyListener("dlg_KeyPress")
 	r.SetOnFocusListener("dlg_HasFocus")
@@ -295,7 +297,7 @@ Public Sub Explorer
 	r.SetOnKeyListener("dlg_KeyPress")
 	r.SetOnFocusListener("dlg_HasFocus")
 	ime1.SetCustomFilter(edtFilename,edtFilename.INPUT_TYPE_TEXT,"qwertyuiopasdfghjklñzxcvbnm-_0123456789QWERTYUIOPASDFGHJKLÑZXCVBNM")
-	ime1.SetLengthFilter(edtFilename,20)
+	ime1.SetLengthFilter(edtFilename,12)
 
 	'pnlCartouche.AddView(edtFilename, MarginCartouche + 1dip, MarginCartouche + 1dip, Largeur - (2*MarginBord) - (2*MarginCartouche) - LargeurBtn, HauteurCartouche - MarginCartouche)
 	pnlCartouche.AddView(edtFilename, MarginCartouche + 1dip, MarginCartouche + 1dip, Largeur - (2*MarginBord) - (2*MarginCartouche) - (3*LargeurBtn), HauteurCartouche - MarginCartouche+ (20*MarginBord))
@@ -417,7 +419,7 @@ Public Sub Explorer2(DarkTheme As Boolean)
 	r.SetOnKeyListener("dlg_KeyPress")
 	r.SetOnFocusListener("dlg_HasFocus")
 	ime1.SetCustomFilter(edtFilename,edtFilename.INPUT_TYPE_TEXT,"qwertyuiopasdfghjklñzxcvbnm-_0123456789QWERTYUIOPASDFGHJKLÑZXCVBNM")
-	ime1.SetLengthFilter(edtFilename,20)
+	ime1.SetLengthFilter(edtFilename,12)
 	pnlCartouche.AddView(edtFilename, MarginCartouche + 1dip, MarginCartouche, Largeur - (3*MarginCartouche) - LargeurBtn, HauteurCartouche - MarginCartouche)
 	btnOK.Initialize("btnOK")
 	btnOK.Text = strBtnOKTxt
@@ -634,6 +636,7 @@ End Sub
 #End Region
 
 Private Sub lstFichiers_Click(Item As Panel, ItemTag As Object)
+	ime1.SetLengthFilter(edtFilename,20)
 	Dim lbl As Label
 	If Item.GetView(0) Is CheckBox Then
 		lbl = Item.GetView(1)

@@ -407,7 +407,6 @@ public static boolean _flag_lectura = false;
 public static int _t = 0;
 public com.delozoya.Consola.Completa.main _main = null;
 public com.delozoya.Consola.Completa.f1a _f1a = null;
-public com.delozoya.Consola.Completa.f1b1 _f1b1 = null;
 public com.delozoya.Consola.Completa.f1c _f1c = null;
 
 public static void initializeProcessGlobals() {
@@ -578,9 +577,9 @@ mostCurrent._lvdatos.AddSingleLine("FLAPPER     5   Giro: "+BA.ObjectToString(mo
 anywheresoftware.b4a.keywords.Common.Log("Tamaño Lista "+BA.NumberToString(mostCurrent._lista1.getSize()));
  //BA.debugLineNum = 366;BA.debugLine="For i=10 To lista1.Size-1 Step 4";
 {
-final int step60 = (int) (4);
-final int limit60 = (int) (mostCurrent._lista1.getSize()-1);
-for (_i = (int) (10) ; (step60 > 0 && _i <= limit60) || (step60 < 0 && _i >= limit60); _i = ((int)(0 + _i + step60)) ) {
+final int step272 = (int) (4);
+final int limit272 = (int) (mostCurrent._lista1.getSize()-1);
+for (_i = (int) (10); (step272 > 0 && _i <= limit272) || (step272 < 0 && _i >= limit272); _i = ((int)(0 + _i + step272))) {
  //BA.debugLineNum = 367;BA.debugLine="tiempo_aux=lista1.Get(i)";
 mostCurrent._tiempo_aux = BA.ObjectToString(mostCurrent._lista1.Get(_i));
  //BA.debugLineNum = 368;BA.debugLine="tiempo_minimo=lista1.get(i)";
@@ -1074,9 +1073,9 @@ _astreams1.Write2(_buffer_tx,(int) (0),(int) (191));
 _astreams1.Write2(_buffer_tx,(int) (192),(int) (64));
  //BA.debugLineNum = 2790;BA.debugLine="For i=0 To buffer_tx.Length-1";
 {
-final int step55 = 1;
-final int limit55 = (int) (_buffer_tx.length-1);
-for (_i = (int) (0) ; (step55 > 0 && _i <= limit55) || (step55 < 0 && _i >= limit55); _i = ((int)(0 + _i + step55)) ) {
+final int step1945 = 1;
+final int limit1945 = (int) (_buffer_tx.length-1);
+for (_i = (int) (0); (step1945 > 0 && _i <= limit1945) || (step1945 < 0 && _i >= limit1945); _i = ((int)(0 + _i + step1945))) {
  //BA.debugLineNum = 2791;BA.debugLine="Log(\"buffer grab: \"&buffer_tx(i))";
 anywheresoftware.b4a.keywords.Common.Log("buffer grab: "+BA.NumberToString(_buffer_tx[_i]));
  }
@@ -1124,9 +1123,9 @@ _filestodelete.Initialize();
 _filestodelete.AddAll(anywheresoftware.b4a.keywords.Common.File.ListFiles(anywheresoftware.b4a.keywords.Common.File.getDirRootExternal()+"/Consola/F1B"));
  //BA.debugLineNum = 2577;BA.debugLine="For I = 0 To FilesToDelete.Size -1";
 {
-final int step4 = 1;
-final int limit4 = (int) (_filestodelete.getSize()-1);
-for (_i = (int) (0) ; (step4 > 0 && _i <= limit4) || (step4 < 0 && _i >= limit4); _i = ((int)(0 + _i + step4)) ) {
+final int step1809 = 1;
+final int limit1809 = (int) (_filestodelete.getSize()-1);
+for (_i = (int) (0); (step1809 > 0 && _i <= limit1809) || (step1809 < 0 && _i >= limit1809); _i = ((int)(0 + _i + step1809))) {
  //BA.debugLineNum = 2579;BA.debugLine="File.Delete(File.DirRootExternal & \"/Consola/F";
 anywheresoftware.b4a.keywords.Common.File.Delete(anywheresoftware.b4a.keywords.Common.File.getDirRootExternal()+"/Consola/F1B",BA.ObjectToString(_filestodelete.Get(_i)));
  }
@@ -1437,9 +1436,9 @@ mostCurrent._lbnumeroservo.setText((Object)(""));
 mostCurrent._lbservotxt.setText((Object)(""));
  //BA.debugLineNum = 2284;BA.debugLine="For i=0 To lista1.Size- 1";
 {
-final int step108 = 1;
-final int limit108 = (int) (mostCurrent._lista1.getSize()-1);
-for (_i = (int) (0) ; (step108 > 0 && _i <= limit108) || (step108 < 0 && _i >= limit108); _i = ((int)(0 + _i + step108)) ) {
+final int step1626 = 1;
+final int limit1626 = (int) (mostCurrent._lista1.getSize()-1);
+for (_i = (int) (0); (step1626 > 0 && _i <= limit1626) || (step1626 < 0 && _i >= limit1626); _i = ((int)(0 + _i + step1626))) {
  //BA.debugLineNum = 2286;BA.debugLine="Log(lista1.Get(i))";
 anywheresoftware.b4a.keywords.Common.Log(BA.ObjectToString(mostCurrent._lista1.Get(_i)));
  }
@@ -1647,9 +1646,9 @@ mostCurrent._lvdatos.getSingleLineLayout().Label.setTextColor(anywheresoftware.b
 mostCurrent._lvdatos.AddSingleLine("FLAPPER     5   Giro: "+BA.ObjectToString(mostCurrent._lista1.Get((int) (9)))+"  RDT");
  //BA.debugLineNum = 763;BA.debugLine="For i=10 To lista1.Size-1 Step 4";
 {
-final int step55 = (int) (4);
-final int limit55 = (int) (mostCurrent._lista1.getSize()-1);
-for (_i = (int) (10) ; (step55 > 0 && _i <= limit55) || (step55 < 0 && _i >= limit55); _i = ((int)(0 + _i + step55)) ) {
+final int step560 = (int) (4);
+final int limit560 = (int) (mostCurrent._lista1.getSize()-1);
+for (_i = (int) (10); (step560 > 0 && _i <= limit560) || (step560 < 0 && _i >= limit560); _i = ((int)(0 + _i + step560))) {
  //BA.debugLineNum = 764;BA.debugLine="tiempo_aux=lista1.Get(i)";
 mostCurrent._tiempo_aux = BA.ObjectToString(mostCurrent._lista1.Get(_i));
  //BA.debugLineNum = 765;BA.debugLine="tipo_tiempo_aux=lista1.Get(i+1)";
@@ -1769,9 +1768,9 @@ mostCurrent._listaconfiguracion.Set((int) (0),(Object)("0"));
  };
  //BA.debugLineNum = 2916;BA.debugLine="For i=0 To listaconfiguracion.Size-1";
 {
-final int step8 = 1;
-final int limit8 = (int) (mostCurrent._listaconfiguracion.getSize()-1);
-for (_i = (int) (0) ; (step8 > 0 && _i <= limit8) || (step8 < 0 && _i >= limit8); _i = ((int)(0 + _i + step8)) ) {
+final int step2019 = 1;
+final int limit2019 = (int) (mostCurrent._listaconfiguracion.getSize()-1);
+for (_i = (int) (0); (step2019 > 0 && _i <= limit2019) || (step2019 < 0 && _i >= limit2019); _i = ((int)(0 + _i + step2019))) {
  //BA.debugLineNum = 2917;BA.debugLine="Log(listaconfiguracion.Get(i))";
 anywheresoftware.b4a.keywords.Common.Log(BA.ObjectToString(mostCurrent._listaconfiguracion.Get(_i)));
  }
@@ -2565,9 +2564,9 @@ anywheresoftware.b4a.keywords.Common.Log("------------------------------");
 anywheresoftware.b4a.keywords.Common.Log("------------------------------");
  //BA.debugLineNum = 2096;BA.debugLine="For i=0 To lista1.Size- 1";
 {
-final int step54 = 1;
-final int limit54 = (int) (mostCurrent._lista1.getSize()-1);
-for (_i = (int) (0) ; (step54 > 0 && _i <= limit54) || (step54 < 0 && _i >= limit54); _i = ((int)(0 + _i + step54)) ) {
+final int step1481 = 1;
+final int limit1481 = (int) (mostCurrent._lista1.getSize()-1);
+for (_i = (int) (0); (step1481 > 0 && _i <= limit1481) || (step1481 < 0 && _i >= limit1481); _i = ((int)(0 + _i + step1481))) {
  //BA.debugLineNum = 2098;BA.debugLine="Log(lista1.Get(i))";
 anywheresoftware.b4a.keywords.Common.Log(BA.ObjectToString(mostCurrent._lista1.Get(_i)));
  }
@@ -2685,18 +2684,18 @@ byte[] _b = null;
  //BA.debugLineNum = 2852;BA.debugLine="Sub Leer_fichero";
  //BA.debugLineNum = 2857;BA.debugLine="For i=0 To lista1.Size-1";
 {
-final int step1 = 1;
-final int limit1 = (int) (mostCurrent._lista1.getSize()-1);
-for (_i = (int) (0) ; (step1 > 0 && _i <= limit1) || (step1 < 0 && _i >= limit1); _i = ((int)(0 + _i + step1)) ) {
+final int step1989 = 1;
+final int limit1989 = (int) (mostCurrent._lista1.getSize()-1);
+for (_i = (int) (0); (step1989 > 0 && _i <= limit1989) || (step1989 < 0 && _i >= limit1989); _i = ((int)(0 + _i + step1989))) {
  //BA.debugLineNum = 2859;BA.debugLine="buffer_tx(i)=lista1.Get(i)";
 _buffer_tx[_i] = (byte)(BA.ObjectToNumber(mostCurrent._lista1.Get(_i)));
  }
 };
  //BA.debugLineNum = 2862;BA.debugLine="For i=lista1.Size To 255";
 {
-final int step4 = 1;
-final int limit4 = (int) (255);
-for (_i = mostCurrent._lista1.getSize() ; (step4 > 0 && _i <= limit4) || (step4 < 0 && _i >= limit4); _i = ((int)(0 + _i + step4)) ) {
+final int step1992 = 1;
+final int limit1992 = (int) (255);
+for (_i = mostCurrent._lista1.getSize(); (step1992 > 0 && _i <= limit1992) || (step1992 < 0 && _i >= limit1992); _i = ((int)(0 + _i + step1992))) {
  //BA.debugLineNum = 2863;BA.debugLine="buffer_tx(i)=0";
 _buffer_tx[_i] = (byte) (0);
  }
@@ -2716,18 +2715,18 @@ _aux = BA.ObjectToString(mostCurrent._listaconfiguracion.Get((int) (1)));
 _b = _aux.getBytes("UTF-8");
  //BA.debugLineNum = 2873;BA.debugLine="For i=0 To b.Length-1";
 {
-final int step13 = 1;
-final int limit13 = (int) (_b.length-1);
-for (_i = (int) (0) ; (step13 > 0 && _i <= limit13) || (step13 < 0 && _i >= limit13); _i = ((int)(0 + _i + step13)) ) {
+final int step2001 = 1;
+final int limit2001 = (int) (_b.length-1);
+for (_i = (int) (0); (step2001 > 0 && _i <= limit2001) || (step2001 < 0 && _i >= limit2001); _i = ((int)(0 + _i + step2001))) {
  //BA.debugLineNum = 2874;BA.debugLine="buffer_tx(i+224)=b(i)";
 _buffer_tx[(int) (_i+224)] = _b[_i];
  }
 };
  //BA.debugLineNum = 2878;BA.debugLine="For i=0 To 255";
 {
-final int step16 = 1;
-final int limit16 = (int) (255);
-for (_i = (int) (0) ; (step16 > 0 && _i <= limit16) || (step16 < 0 && _i >= limit16); _i = ((int)(0 + _i + step16)) ) {
+final int step2004 = 1;
+final int limit2004 = (int) (255);
+for (_i = (int) (0); (step2004 > 0 && _i <= limit2004) || (step2004 < 0 && _i >= limit2004); _i = ((int)(0 + _i + step2004))) {
  //BA.debugLineNum = 2879;BA.debugLine="Log(buffer_tx(i))";
 anywheresoftware.b4a.keywords.Common.Log(BA.NumberToString(_buffer_tx[_i]));
  }
@@ -2754,9 +2753,9 @@ int _i = 0;
  //BA.debugLineNum = 2359;BA.debugLine="Sub log_lista";
  //BA.debugLineNum = 2360;BA.debugLine="For i=0 To lista1.Size- 1";
 {
-final int step1 = 1;
-final int limit1 = (int) (mostCurrent._lista1.getSize()-1);
-for (_i = (int) (0) ; (step1 > 0 && _i <= limit1) || (step1 < 0 && _i >= limit1); _i = ((int)(0 + _i + step1)) ) {
+final int step1678 = 1;
+final int limit1678 = (int) (mostCurrent._lista1.getSize()-1);
+for (_i = (int) (0); (step1678 > 0 && _i <= limit1678) || (step1678 < 0 && _i >= limit1678); _i = ((int)(0 + _i + step1678))) {
  //BA.debugLineNum = 2362;BA.debugLine="Log(lista1.Get(i))";
 anywheresoftware.b4a.keywords.Common.Log(BA.ObjectToString(mostCurrent._lista1.Get(_i)));
  }
@@ -3158,9 +3157,9 @@ _pos_valor = (int) (((double)(Double.parseDouble(_pos_mod_aux))*4)+10);
 if ((mostCurrent._posicion_mod).equals(BA.NumberToString(mostCurrent._lvdatos.getSize()))) { 
  //BA.debugLineNum = 1299;BA.debugLine="For i=0 To 3";
 {
-final int step15 = 1;
-final int limit15 = (int) (3);
-for (_i = (int) (0) ; (step15 > 0 && _i <= limit15) || (step15 < 0 && _i >= limit15); _i = ((int)(0 + _i + step15)) ) {
+final int step945 = 1;
+final int limit945 = (int) (3);
+for (_i = (int) (0); (step945 > 0 && _i <= limit945) || (step945 < 0 && _i >= limit945); _i = ((int)(0 + _i + step945))) {
  //BA.debugLineNum = 1300;BA.debugLine="lista1.RemoveAt(pos_valor-1)";
 mostCurrent._lista1.RemoveAt((int) (_pos_valor-1));
  }
@@ -3189,9 +3188,9 @@ _borrar_datos((int) (50),(int) (60),(int) (170));
 _test = 0;
  //BA.debugLineNum = 1330;BA.debugLine="For i=0 To lista1.Size-1";
 {
-final int step31 = 1;
-final int limit31 = (int) (mostCurrent._lista1.getSize()-1);
-for (_i = (int) (0) ; (step31 > 0 && _i <= limit31) || (step31 < 0 && _i >= limit31); _i = ((int)(0 + _i + step31)) ) {
+final int step961 = 1;
+final int limit961 = (int) (mostCurrent._lista1.getSize()-1);
+for (_i = (int) (0); (step961 > 0 && _i <= limit961) || (step961 < 0 && _i >= limit961); _i = ((int)(0 + _i + step961))) {
  //BA.debugLineNum = 1332;BA.debugLine="Log(lista1.Get(i))";
 anywheresoftware.b4a.keywords.Common.Log(BA.ObjectToString(mostCurrent._lista1.Get(_i)));
  }
@@ -3314,9 +3313,9 @@ _servo_actual_nombre = "FLAPPER     5";
 anywheresoftware.b4a.keywords.Common.Log(_servo_actual_nombre+"tiempo Actual "+BA.NumberToString(_tiempo_actual1)+" Numero_lineas "+BA.NumberToString(_numerolineas)+"numero lineas-5 "+BA.NumberToString(_num));
  //BA.debugLineNum = 1870;BA.debugLine="For  i= num To  numerolineas-1";
 {
-final int step27 = 1;
-final int limit27 = (int) (_numerolineas-1);
-for (_i = _num ; (step27 > 0 && _i <= limit27) || (step27 < 0 && _i >= limit27); _i = ((int)(0 + _i + step27)) ) {
+final int step1332 = 1;
+final int limit1332 = (int) (_numerolineas-1);
+for (_i = _num; (step1332 > 0 && _i <= limit1332) || (step1332 < 0 && _i >= limit1332); _i = ((int)(0 + _i + step1332))) {
  //BA.debugLineNum = 1872;BA.debugLine="If i<10 Then";
 if (_i<10) { 
  }else {
@@ -3691,9 +3690,9 @@ mostCurrent._lvdatos.getSingleLineLayout().Label.setTextColor(anywheresoftware.b
 mostCurrent._lvdatos.AddSingleLine("FLAPPER     5   Giro: "+BA.ObjectToString(mostCurrent._lista1.Get((int) (9)))+"  RDT");
  //BA.debugLineNum = 1767;BA.debugLine="For i=10 To lista1.Size-1 Step 4";
 {
-final int step88 = (int) (4);
-final int limit88 = (int) (mostCurrent._lista1.getSize()-1);
-for (_i = (int) (10) ; (step88 > 0 && _i <= limit88) || (step88 < 0 && _i >= limit88); _i = ((int)(0 + _i + step88)) ) {
+final int step1250 = (int) (4);
+final int limit1250 = (int) (mostCurrent._lista1.getSize()-1);
+for (_i = (int) (10); (step1250 > 0 && _i <= limit1250) || (step1250 < 0 && _i >= limit1250); _i = ((int)(0 + _i + step1250))) {
  //BA.debugLineNum = 1768;BA.debugLine="tiempo_aux=lista1.Get(i)";
 mostCurrent._tiempo_aux = BA.ObjectToString(mostCurrent._lista1.Get(_i));
  //BA.debugLineNum = 1769;BA.debugLine="tipo_tiempo_aux=lista1.Get(i+1)";

@@ -42,13 +42,6 @@
 		<activity
 			android:windowSoftInputMode="stateHidden"
 			android:launchMode="singleTop"
-			android:name=".f1b1"
-			android:label="CONSOLA 2.0"
-			android:screenOrientation="landscape">
-		</activity>
-		<activity
-			android:windowSoftInputMode="stateHidden"
-			android:launchMode="singleTop"
 			android:name=".f1c"
 			android:label="CONSOLA 2.0"
 			android:screenOrientation="landscape">

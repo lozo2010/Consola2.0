@@ -15,12 +15,13 @@ public class clschecklist extends B4AClass.ImplB4AClass implements BA.SubDelegat
                 ba.loadHtSubs(this.getClass());
                 htSubs = ba.htSubs;
             }
-            
+            if (BA.isShellModeRuntimeCheck(ba)) {
+			    ba.raiseEvent2(null, true, "CREATE", true, "com.delozoya.Consola.Completa.clschecklist",
+                    ba);
+                return;
+		    }
         }
-        if (BA.isShellModeRuntimeCheck(ba)) 
-			   this.getClass().getMethod("_class_globals", com.delozoya.Consola.Completa.clschecklist.class).invoke(this, new Object[] {null});
-        else
-            ba.raiseEvent2(null, true, "class_globals", false);
+        ba.raiseEvent2(null, true, "class_globals", false);
     }
 
  public anywheresoftware.b4a.keywords.Common __c = null;
@@ -59,7 +60,6 @@ public int _paint_checked = 0;
 public int _paint_pressed = 0;
 public com.delozoya.Consola.Completa.main _main = null;
 public com.delozoya.Consola.Completa.f1a _f1a = null;
-public com.delozoya.Consola.Completa.f1b1 _f1b1 = null;
 public com.delozoya.Consola.Completa.f1c _f1c = null;
 public com.delozoya.Consola.Completa.f1b _f1b = null;
 public static class _typsortdata{
@@ -423,9 +423,9 @@ _pnl = new anywheresoftware.b4a.objects.PanelWrapper();
 _firstpos = (int) (-1);
  //BA.debugLineNum = 1253;BA.debugLine="For i = 0 To NumberOfItems - 1";
 {
-final int step3 = 1;
-final int limit3 = (int) (_numberofitems()-1);
-for (_i = (int) (0) ; (step3 > 0 && _i <= limit3) || (step3 < 0 && _i >= limit3); _i = ((int)(0 + _i + step3)) ) {
+final int step1035 = 1;
+final int limit1035 = (int) (_numberofitems()-1);
+for (_i = (int) (0); (step1035 > 0 && _i <= limit1035) || (step1035 < 0 && _i >= limit1035); _i = ((int)(0 + _i + step1035))) {
  //BA.debugLineNum = 1254;BA.debugLine="pnl = sv.Panel.GetView(i)";
 _pnl.setObject((android.view.ViewGroup)(_sv.getPanel().GetView(_i).getObject()));
  //BA.debugLineNum = 1255;BA.debugLine="If pnl.Visible = False Then";
@@ -482,16 +482,16 @@ _pnl = new anywheresoftware.b4a.objects.PanelWrapper();
 _chb = new anywheresoftware.b4a.objects.CompoundButtonWrapper.CheckBoxWrapper();
  //BA.debugLineNum = 847;BA.debugLine="For i = 0 To sv.Panel.NumberOfViews - 1";
 {
-final int step3 = 1;
-final int limit3 = (int) (_sv.getPanel().getNumberOfViews()-1);
-for (_i = (int) (0) ; (step3 > 0 && _i <= limit3) || (step3 < 0 && _i >= limit3); _i = ((int)(0 + _i + step3)) ) {
+final int step712 = 1;
+final int limit712 = (int) (_sv.getPanel().getNumberOfViews()-1);
+for (_i = (int) (0); (step712 > 0 && _i <= limit712) || (step712 < 0 && _i >= limit712); _i = ((int)(0 + _i + step712))) {
  //BA.debugLineNum = 848;BA.debugLine="pnl = sv.Panel.GetView(i)";
 _pnl.setObject((android.view.ViewGroup)(_sv.getPanel().GetView(_i).getObject()));
  //BA.debugLineNum = 849;BA.debugLine="For p = 0 To pnl.NumberOfViews - 1";
 {
-final int step5 = 1;
-final int limit5 = (int) (_pnl.getNumberOfViews()-1);
-for (_p = (int) (0) ; (step5 > 0 && _p <= limit5) || (step5 < 0 && _p >= limit5); _p = ((int)(0 + _p + step5)) ) {
+final int step714 = 1;
+final int limit714 = (int) (_pnl.getNumberOfViews()-1);
+for (_p = (int) (0); (step714 > 0 && _p <= limit714) || (step714 < 0 && _p >= limit714); _p = ((int)(0 + _p + step714))) {
  //BA.debugLineNum = 850;BA.debugLine="If IsCheckBox(pnl.GetView(p)) Then";
 if (_ischeckbox(_pnl.GetView(_p))) { 
  //BA.debugLineNum = 851;BA.debugLine="chb = pnl.GetView(p)";
@@ -646,9 +646,9 @@ _svheight = (int) (_svheight-_extensionheight);
 _sv.getPanel().setHeight(_svheight);
  //BA.debugLineNum = 1003;BA.debugLine="For i = ExtensionIndex + 1 To sv.Panel.NumberOfV";
 {
-final int step16 = 1;
-final int limit16 = (int) (_sv.getPanel().getNumberOfViews()-1);
-for (_i = (int) (_extensionindex+1) ; (step16 > 0 && _i <= limit16) || (step16 < 0 && _i >= limit16); _i = ((int)(0 + _i + step16)) ) {
+final int step839 = 1;
+final int limit839 = (int) (_sv.getPanel().getNumberOfViews()-1);
+for (_i = (int) (_extensionindex+1); (step839 > 0 && _i <= limit839) || (step839 < 0 && _i >= limit839); _i = ((int)(0 + _i + step839))) {
  //BA.debugLineNum = 1004;BA.debugLine="pnl = sv.Panel.GetView(i)";
 _pnl.setObject((android.view.ViewGroup)(_sv.getPanel().GetView(_i).getObject()));
  //BA.debugLineNum = 1005;BA.debugLine="pnl.Top = pnl.Top - ExtensionHeight";
@@ -705,16 +705,16 @@ _v = new anywheresoftware.b4a.objects.ConcreteViewWrapper();
 _c = new anywheresoftware.b4a.objects.CompoundButtonWrapper.CheckBoxWrapper();
  //BA.debugLineNum = 547;BA.debugLine="For i = FirstPosition To LastPosition";
 {
-final int step5 = 1;
-final int limit5 = _lastposition;
-for (_i = _firstposition ; (step5 > 0 && _i <= limit5) || (step5 < 0 && _i >= limit5); _i = ((int)(0 + _i + step5)) ) {
+final int step469 = 1;
+final int limit469 = _lastposition;
+for (_i = _firstposition; (step469 > 0 && _i <= limit469) || (step469 < 0 && _i >= limit469); _i = ((int)(0 + _i + step469))) {
  //BA.debugLineNum = 548;BA.debugLine="pnl = sv.Panel.GetView(i)";
 _pnl.setObject((android.view.ViewGroup)(_sv.getPanel().GetView(_i).getObject()));
  //BA.debugLineNum = 549;BA.debugLine="For p = 0 To pnl.NumberOfViews - 1";
 {
-final int step7 = 1;
-final int limit7 = (int) (_pnl.getNumberOfViews()-1);
-for (_p = (int) (0) ; (step7 > 0 && _p <= limit7) || (step7 < 0 && _p >= limit7); _p = ((int)(0 + _p + step7)) ) {
+final int step471 = 1;
+final int limit471 = (int) (_pnl.getNumberOfViews()-1);
+for (_p = (int) (0); (step471 > 0 && _p <= limit471) || (step471 < 0 && _p >= limit471); _p = ((int)(0 + _p + step471))) {
  //BA.debugLineNum = 550;BA.debugLine="v = pnl.GetView(p)";
 _v = _pnl.GetView(_p);
  //BA.debugLineNum = 551;BA.debugLine="If IsCheckBox(v) Then";
@@ -811,9 +811,9 @@ _movefollowingpanels = __c.False;
 _pnl = new anywheresoftware.b4a.objects.PanelWrapper();
  //BA.debugLineNum = 942;BA.debugLine="For i = 0 To sv.Panel.NumberOfViews - 1";
 {
-final int step6 = 1;
-final int limit6 = (int) (_sv.getPanel().getNumberOfViews()-1);
-for (_i = (int) (0) ; (step6 > 0 && _i <= limit6) || (step6 < 0 && _i >= limit6); _i = ((int)(0 + _i + step6)) ) {
+final int step786 = 1;
+final int limit786 = (int) (_sv.getPanel().getNumberOfViews()-1);
+for (_i = (int) (0); (step786 > 0 && _i <= limit786) || (step786 < 0 && _i >= limit786); _i = ((int)(0 + _i + step786))) {
  //BA.debugLineNum = 943;BA.debugLine="pnl = sv.Panel.GetView(i)";
 _pnl.setObject((android.view.ViewGroup)(_sv.getPanel().GetView(_i).getObject()));
  //BA.debugLineNum = 944;BA.debugLine="If MoveFollowingPanels Then";
@@ -914,9 +914,9 @@ _s = "";
 _pnl = new anywheresoftware.b4a.objects.PanelWrapper();
  //BA.debugLineNum = 1209;BA.debugLine="For i = 0 To L.Size - 1";
 {
-final int step14 = 1;
-final int limit14 = (int) (_l.getSize()-1);
-for (_i = (int) (0) ; (step14 > 0 && _i <= limit14) || (step14 < 0 && _i >= limit14); _i = ((int)(0 + _i + step14)) ) {
+final int step1005 = 1;
+final int limit1005 = (int) (_l.getSize()-1);
+for (_i = (int) (0); (step1005 > 0 && _i <= limit1005) || (step1005 < 0 && _i >= limit1005); _i = ((int)(0 + _i + step1005))) {
  //BA.debugLineNum = 1210;BA.debugLine="S = L.Get(i)";
 _s = BA.ObjectToString(_l.Get(_i));
  //BA.debugLineNum = 1211;BA.debugLine="pnl = sv.Panel.GetView(i)";
@@ -987,9 +987,9 @@ anywheresoftware.b4a.objects.PanelWrapper _pnl = null;
 if (_sv.IsInitialized()) { 
  //BA.debugLineNum = 728;BA.debugLine="For i = 0 To NumberOfItems - 1";
 {
-final int step2 = 1;
-final int limit2 = (int) (_numberofitems()-1);
-for (_i = (int) (0) ; (step2 > 0 && _i <= limit2) || (step2 < 0 && _i >= limit2); _i = ((int)(0 + _i + step2)) ) {
+final int step619 = 1;
+final int limit619 = (int) (_numberofitems()-1);
+for (_i = (int) (0); (step619 > 0 && _i <= limit619) || (step619 < 0 && _i >= limit619); _i = ((int)(0 + _i + step619))) {
  //BA.debugLineNum = 729;BA.debugLine="Dim pnl As Panel";
 _pnl = new anywheresoftware.b4a.objects.PanelWrapper();
  //BA.debugLineNum = 730;BA.debugLine="pnl = sv.Panel.GetView(i)";
@@ -1015,9 +1015,9 @@ anywheresoftware.b4a.objects.LabelWrapper _lbl = null;
 _pnl = new anywheresoftware.b4a.objects.PanelWrapper();
  //BA.debugLineNum = 683;BA.debugLine="For i = 0 To sv.Panel.NumberOfViews - 1";
 {
-final int step2 = 1;
-final int limit2 = (int) (_sv.getPanel().getNumberOfViews()-1);
-for (_i = (int) (0) ; (step2 > 0 && _i <= limit2) || (step2 < 0 && _i >= limit2); _i = ((int)(0 + _i + step2)) ) {
+final int step581 = 1;
+final int limit581 = (int) (_sv.getPanel().getNumberOfViews()-1);
+for (_i = (int) (0); (step581 > 0 && _i <= limit581) || (step581 < 0 && _i >= limit581); _i = ((int)(0 + _i + step581))) {
  //BA.debugLineNum = 684;BA.debugLine="pnl = sv.Panel.GetView(i)";
 _pnl.setObject((android.view.ViewGroup)(_sv.getPanel().GetView(_i).getObject()));
  //BA.debugLineNum = 685;BA.debugLine="If pnl.Tag = Null Then Continue";
@@ -1027,9 +1027,9 @@ if (true) continue;};
 if ((_pnl.getTag()).equals(_id)) { 
  //BA.debugLineNum = 687;BA.debugLine="For p = 0 To pnl.NumberOfViews - 1";
 {
-final int step6 = 1;
-final int limit6 = (int) (_pnl.getNumberOfViews()-1);
-for (_p = (int) (0) ; (step6 > 0 && _p <= limit6) || (step6 < 0 && _p >= limit6); _p = ((int)(0 + _p + step6)) ) {
+final int step585 = 1;
+final int limit585 = (int) (_pnl.getNumberOfViews()-1);
+for (_p = (int) (0); (step585 > 0 && _p <= limit585) || (step585 < 0 && _p >= limit585); _p = ((int)(0 + _p + step585))) {
  //BA.debugLineNum = 688;BA.debugLine="If IsLabel(pnl.GetView(p)) Then";
 if (_islabel(_pnl.GetView(_p))) { 
  //BA.debugLineNum = 689;BA.debugLine="Dim lbl As Label";
@@ -1157,9 +1157,9 @@ int _id_presseddrawable = 0;
 _sv = _svlist;
  //BA.debugLineNum = 48;BA.debugLine="For i = sv.Panel.NumberOfViews-1 To 0 Step -1";
 {
-final int step2 = (int) (-1);
-final int limit2 = (int) (0);
-for (_i = (int) (_sv.getPanel().getNumberOfViews()-1) ; (step2 > 0 && _i <= limit2) || (step2 < 0 && _i >= limit2); _i = ((int)(0 + _i + step2)) ) {
+final int step42 = (int) (-1);
+final int limit42 = (int) (0);
+for (_i = (int) (_sv.getPanel().getNumberOfViews()-1); (step42 > 0 && _i <= limit42) || (step42 < 0 && _i >= limit42); _i = ((int)(0 + _i + step42))) {
  //BA.debugLineNum = 49;BA.debugLine="sv.Panel.RemoveViewAt(i)";
 _sv.getPanel().RemoveViewAt(_i);
  }
@@ -1256,9 +1256,9 @@ if (_sv.IsInitialized()) {
 _totalheight = 0;
  //BA.debugLineNum = 773;BA.debugLine="For i = 0 To NumberOfItems - 1";
 {
-final int step3 = 1;
-final int limit3 = (int) (_numberofitems()-1);
-for (_i = (int) (0) ; (step3 > 0 && _i <= limit3) || (step3 < 0 && _i >= limit3); _i = ((int)(0 + _i + step3)) ) {
+final int step651 = 1;
+final int limit651 = (int) (_numberofitems()-1);
+for (_i = (int) (0); (step651 > 0 && _i <= limit651) || (step651 < 0 && _i >= limit651); _i = ((int)(0 + _i + step651))) {
  //BA.debugLineNum = 774;BA.debugLine="Dim pnl As Panel";
 _pnl = new anywheresoftware.b4a.objects.PanelWrapper();
  //BA.debugLineNum = 775;BA.debugLine="pnl = sv.Panel.GetView(i)";
@@ -1341,18 +1341,18 @@ _listecoches.Initialize();
 if (_sv.IsInitialized()) { 
  //BA.debugLineNum = 811;BA.debugLine="For i = 0 To sv.Panel.NumberOfViews-1";
 {
-final int step4 = 1;
-final int limit4 = (int) (_sv.getPanel().getNumberOfViews()-1);
-for (_i = (int) (0) ; (step4 > 0 && _i <= limit4) || (step4 < 0 && _i >= limit4); _i = ((int)(0 + _i + step4)) ) {
+final int step682 = 1;
+final int limit682 = (int) (_sv.getPanel().getNumberOfViews()-1);
+for (_i = (int) (0); (step682 > 0 && _i <= limit682) || (step682 < 0 && _i >= limit682); _i = ((int)(0 + _i + step682))) {
  //BA.debugLineNum = 812;BA.debugLine="Dim pnl As Panel";
 _pnl = new anywheresoftware.b4a.objects.PanelWrapper();
  //BA.debugLineNum = 813;BA.debugLine="pnl = sv.Panel.GetView(i)";
 _pnl.setObject((android.view.ViewGroup)(_sv.getPanel().GetView(_i).getObject()));
  //BA.debugLineNum = 814;BA.debugLine="For p = 0 To pnl.NumberOfViews - 1";
 {
-final int step7 = 1;
-final int limit7 = (int) (_pnl.getNumberOfViews()-1);
-for (_p = (int) (0) ; (step7 > 0 && _p <= limit7) || (step7 < 0 && _p >= limit7); _p = ((int)(0 + _p + step7)) ) {
+final int step685 = 1;
+final int limit685 = (int) (_pnl.getNumberOfViews()-1);
+for (_p = (int) (0); (step685 > 0 && _p <= limit685) || (step685 < 0 && _p >= limit685); _p = ((int)(0 + _p + step685))) {
  //BA.debugLineNum = 815;BA.debugLine="If IsCheckBox(pnl.GetView(p)) Then";
 if (_ischeckbox(_pnl.GetView(_p))) { 
  //BA.debugLineNum = 816;BA.debugLine="Dim chk As CheckBox";
@@ -1415,9 +1415,9 @@ _e = new anywheresoftware.b4a.objects.EditTextWrapper();
 _entier = 0;
  //BA.debugLineNum = 480;BA.debugLine="For i = FirstPosition To LastPosition";
 {
-final int step11 = 1;
-final int limit11 = _lastposition;
-for (_i = _firstposition ; (step11 > 0 && _i <= limit11) || (step11 < 0 && _i >= limit11); _i = ((int)(0 + _i + step11)) ) {
+final int step415 = 1;
+final int limit415 = _lastposition;
+for (_i = _firstposition; (step415 > 0 && _i <= limit415) || (step415 < 0 && _i >= limit415); _i = ((int)(0 + _i + step415))) {
  //BA.debugLineNum = 481;BA.debugLine="pnl = sv.Panel.GetView(i)";
 _pnl.setObject((android.view.ViewGroup)(_sv.getPanel().GetView(_i).getObject()));
  //BA.debugLineNum = 482;BA.debugLine="v = pnl.GetView(ViewIndexInPanel)";
@@ -1515,7 +1515,7 @@ int _i = 0;
 int _cptbtf = 0;
 int _cptstb = 0;
  //BA.debugLineNum = 287;BA.debugLine="Public Sub MoveItem(StartPosition As Int, EndPosit";
- //BA.debugLineNum = 288;BA.debugLine="If sv.IsInitialized AND StartPosition <> EndPosit";
+ //BA.debugLineNum = 288;BA.debugLine="If sv.IsInitialized And StartPosition <> EndPosit";
 if (_sv.IsInitialized() && _startposition!=_endposition) { 
  //BA.debugLineNum = 289;BA.debugLine="If HasExtraContent Then CollapseItem";
 if (_hasextracontent()) { 
@@ -1543,9 +1543,9 @@ _movefollowingpanels = __c.False;
 _pnl = new anywheresoftware.b4a.objects.PanelWrapper();
  //BA.debugLineNum = 300;BA.debugLine="For i = 0 To NumberOfItems - 1";
 {
-final int step13 = 1;
-final int limit13 = (int) (_numberofitems()-1);
-for (_i = (int) (0) ; (step13 > 0 && _i <= limit13) || (step13 < 0 && _i >= limit13); _i = ((int)(0 + _i + step13)) ) {
+final int step260 = 1;
+final int limit260 = (int) (_numberofitems()-1);
+for (_i = (int) (0); (step260 > 0 && _i <= limit260) || (step260 < 0 && _i >= limit260); _i = ((int)(0 + _i + step260))) {
  //BA.debugLineNum = 301;BA.debugLine="pnl = sv.Panel.GetView(i)";
 _pnl.setObject((android.view.ViewGroup)(_sv.getPanel().GetView(_i).getObject()));
  //BA.debugLineNum = 302;BA.debugLine="If i = StartPosition Then";
@@ -1598,9 +1598,9 @@ _endposition = (int) (_endposition-1);
 _pnltomove.BringToFront();
  //BA.debugLineNum = 329;BA.debugLine="For i = 1 To CptBtF";
 {
-final int step39 = 1;
-final int limit39 = _cptbtf;
-for (_i = (int) (1) ; (step39 > 0 && _i <= limit39) || (step39 < 0 && _i >= limit39); _i = ((int)(0 + _i + step39)) ) {
+final int step286 = 1;
+final int limit286 = _cptbtf;
+for (_i = (int) (1); (step286 > 0 && _i <= limit286) || (step286 < 0 && _i >= limit286); _i = ((int)(0 + _i + step286))) {
  //BA.debugLineNum = 330;BA.debugLine="pnl = sv.Panel.GetView(EndPosition)";
 _pnl.setObject((android.view.ViewGroup)(_sv.getPanel().GetView(_endposition).getObject()));
  //BA.debugLineNum = 331;BA.debugLine="pnl.BringToFront";
@@ -1619,9 +1619,9 @@ _endposition = (int) (_endposition+1);
 _pnltomove.SendToBack();
  //BA.debugLineNum = 339;BA.debugLine="For i = 1 To CptStB";
 {
-final int step49 = 1;
-final int limit49 = _cptstb;
-for (_i = (int) (1) ; (step49 > 0 && _i <= limit49) || (step49 < 0 && _i >= limit49); _i = ((int)(0 + _i + step49)) ) {
+final int step296 = 1;
+final int limit296 = _cptstb;
+for (_i = (int) (1); (step296 > 0 && _i <= limit296) || (step296 < 0 && _i >= limit296); _i = ((int)(0 + _i + step296))) {
  //BA.debugLineNum = 340;BA.debugLine="pnl = sv.Panel.GetView(EndPosition - 1)";
 _pnl.setObject((android.view.ViewGroup)(_sv.getPanel().GetView((int) (_endposition-1)).getObject()));
  //BA.debugLineNum = 341;BA.debugLine="pnl.SendToBack";
@@ -1652,9 +1652,9 @@ _endposition = (int) (-1);
 _pnl = new anywheresoftware.b4a.objects.PanelWrapper();
  //BA.debugLineNum = 1082;BA.debugLine="For i = 0 To NumberOfItems - 1";
 {
-final int step6 = 1;
-final int limit6 = (int) (_numberofitems()-1);
-for (_i = (int) (0) ; (step6 > 0 && _i <= limit6) || (step6 < 0 && _i >= limit6); _i = ((int)(0 + _i + step6)) ) {
+final int step899 = 1;
+final int limit899 = (int) (_numberofitems()-1);
+for (_i = (int) (0); (step899 > 0 && _i <= limit899) || (step899 < 0 && _i >= limit899); _i = ((int)(0 + _i + step899))) {
  //BA.debugLineNum = 1083;BA.debugLine="pnl = sv.Panel.GetView(i)";
 _pnl.setObject((android.view.ViewGroup)(_sv.getPanel().GetView(_i).getObject()));
  //BA.debugLineNum = 1084;BA.debugLine="If pnl.Top = OriginDDTop Then";
@@ -1708,9 +1708,9 @@ _newtop = _pnl.getTop();
  };
  //BA.debugLineNum = 1180;BA.debugLine="For i = FirstPos + 1 To NumberOfItems - 1";
 {
-final int step8 = 1;
-final int limit8 = (int) (_numberofitems()-1);
-for (_i = (int) (_firstpos+1) ; (step8 > 0 && _i <= limit8) || (step8 < 0 && _i >= limit8); _i = ((int)(0 + _i + step8)) ) {
+final int step981 = 1;
+final int limit981 = (int) (_numberofitems()-1);
+for (_i = (int) (_firstpos+1); (step981 > 0 && _i <= limit981) || (step981 < 0 && _i >= limit981); _i = ((int)(0 + _i + step981))) {
  //BA.debugLineNum = 1181;BA.debugLine="pnl = sv.Panel.GetView(i)";
 _pnl.setObject((android.view.ViewGroup)(_sv.getPanel().GetView(_i).getObject()));
  //BA.debugLineNum = 1182;BA.debugLine="If pnl.Visible Then";
@@ -1759,9 +1759,9 @@ _state = _paint_default;
  };
  //BA.debugLineNum = 905;BA.debugLine="For p = 0 To pnl.NumberOfViews - 1";
 {
-final int step7 = 1;
-final int limit7 = (int) (_pnl.getNumberOfViews()-1);
-for (_p = (int) (0) ; (step7 > 0 && _p <= limit7) || (step7 < 0 && _p >= limit7); _p = ((int)(0 + _p + step7)) ) {
+final int step753 = 1;
+final int limit753 = (int) (_pnl.getNumberOfViews()-1);
+for (_p = (int) (0); (step753 > 0 && _p <= limit753) || (step753 < 0 && _p >= limit753); _p = ((int)(0 + _p + step753))) {
  //BA.debugLineNum = 906;BA.debugLine="If IsCheckBox(pnl.GetView(p)) Then";
 if (_ischeckbox(_pnl.GetView(_p))) { 
  //BA.debugLineNum = 907;BA.debugLine="Dim chk As CheckBox";
@@ -1783,15 +1783,15 @@ __c.CallSubNew3(ba,_callbackmod,_sub_paint,(Object)(_pnl),(Object)(_state));
  }else {
  //BA.debugLineNum = 916;BA.debugLine="Select State";
 switch (BA.switchObjectToInt(_state,_paint_extended,_paint_checked,(int) (_paint_checked+_paint_extended))) {
-case 0: {
+case 0:
  //BA.debugLineNum = 918;BA.debugLine="pnl.Color = ExtensionColor";
 _pnl.setColor(_extensioncolor);
- break; }
-case 1: {
+ break;
+case 1:
  //BA.debugLineNum = 920;BA.debugLine="pnl.Color = CheckedColor";
 _pnl.setColor(_checkedcolor);
- break; }
-case 2: {
+ break;
+case 2:
  //BA.debugLineNum = 922;BA.debugLine="If CheckedColor = Colors.Transparent Then";
 if (_checkedcolor==__c.Colors.Transparent) { 
  //BA.debugLineNum = 923;BA.debugLine="pnl.Color = ExtensionColor";
@@ -1800,11 +1800,11 @@ _pnl.setColor(_extensioncolor);
  //BA.debugLineNum = 925;BA.debugLine="pnl.Color = CheckedColor";
 _pnl.setColor(_checkedcolor);
  };
- break; }
-default: {
+ break;
+default:
  //BA.debugLineNum = 928;BA.debugLine="pnl.Color = BackgroundColor";
 _pnl.setColor(_backgroundcolor);
- break; }
+ break;
 }
 ;
  };
@@ -1882,9 +1882,9 @@ _movetodropposition((int) (_y));
  }else if(_modecheck) { 
  //BA.debugLineNum = 1128;BA.debugLine="For p = 0 To pnl.NumberOfViews - 1";
 {
-final int step21 = 1;
-final int limit21 = (int) (_pnl.getNumberOfViews()-1);
-for (_p = (int) (0) ; (step21 > 0 && _p <= limit21) || (step21 < 0 && _p >= limit21); _p = ((int)(0 + _p + step21)) ) {
+final int step936 = 1;
+final int limit936 = (int) (_pnl.getNumberOfViews()-1);
+for (_p = (int) (0); (step936 > 0 && _p <= limit936) || (step936 < 0 && _p >= limit936); _p = ((int)(0 + _p + step936))) {
  //BA.debugLineNum = 1129;BA.debugLine="If IsCheckBox(pnl.GetView(p)) Then";
 if (_ischeckbox(_pnl.GetView(_p))) { 
  //BA.debugLineNum = 1130;BA.debugLine="Dim chb As CheckBox";
@@ -1939,9 +1939,9 @@ _removedheight = _pnl.getHeight();
 _pnl.RemoveView();
  //BA.debugLineNum = 437;BA.debugLine="For i = Position To sv.Panel.NumberOfViews - 1";
 {
-final int step12 = 1;
-final int limit12 = (int) (_sv.getPanel().getNumberOfViews()-1);
-for (_i = _position ; (step12 > 0 && _i <= limit12) || (step12 < 0 && _i >= limit12); _i = ((int)(0 + _i + step12)) ) {
+final int step377 = 1;
+final int limit377 = (int) (_sv.getPanel().getNumberOfViews()-1);
+for (_i = _position; (step377 > 0 && _i <= limit377) || (step377 < 0 && _i >= limit377); _i = ((int)(0 + _i + step377))) {
  //BA.debugLineNum = 438;BA.debugLine="pnl = sv.Panel.GetView(i)";
 _pnl.setObject((android.view.ViewGroup)(_sv.getPanel().GetView(_i).getObject()));
  //BA.debugLineNum = 439;BA.debugLine="pnl.Top = pnl.Top - RemovedHeight";
@@ -1966,9 +1966,9 @@ if (_sv.IsInitialized()) {
 _pnl = new anywheresoftware.b4a.objects.PanelWrapper();
  //BA.debugLineNum = 450;BA.debugLine="For i = 0 To sv.Panel.NumberOfViews - 1";
 {
-final int step3 = 1;
-final int limit3 = (int) (_sv.getPanel().getNumberOfViews()-1);
-for (_i = (int) (0) ; (step3 > 0 && _i <= limit3) || (step3 < 0 && _i >= limit3); _i = ((int)(0 + _i + step3)) ) {
+final int step388 = 1;
+final int limit388 = (int) (_sv.getPanel().getNumberOfViews()-1);
+for (_i = (int) (0); (step388 > 0 && _i <= limit388) || (step388 < 0 && _i >= limit388); _i = ((int)(0 + _i + step388))) {
  //BA.debugLineNum = 451;BA.debugLine="pnl = sv.Panel.GetView(i)";
 _pnl.setObject((android.view.ViewGroup)(_sv.getPanel().GetView(_i).getObject()));
  //BA.debugLineNum = 452;BA.debugLine="If pnl.Tag = Null Then Continue";
@@ -2020,9 +2020,9 @@ int _i = 0;
  //BA.debugLineNum = 879;BA.debugLine="Public Sub RepaintAllItems";
  //BA.debugLineNum = 880;BA.debugLine="For i = 0 To NumberOfItems - 1";
 {
-final int step1 = 1;
-final int limit1 = (int) (_numberofitems()-1);
-for (_i = (int) (0) ; (step1 > 0 && _i <= limit1) || (step1 < 0 && _i >= limit1); _i = ((int)(0 + _i + step1)) ) {
+final int step739 = 1;
+final int limit739 = (int) (_numberofitems()-1);
+for (_i = (int) (0); (step739 > 0 && _i <= limit739) || (step739 < 0 && _i >= limit739); _i = ((int)(0 + _i + step739))) {
  //BA.debugLineNum = 881;BA.debugLine="Repaint(sv.Panel.GetView(i))";
 _repaint((anywheresoftware.b4a.objects.PanelWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.PanelWrapper(), (android.view.ViewGroup)(_sv.getPanel().GetView(_i).getObject())));
  }
@@ -2099,9 +2099,9 @@ _sortlist = new anywheresoftware.b4a.objects.collections.List();
 _sortlist.Initialize();
  //BA.debugLineNum = 573;BA.debugLine="For i = FirstPosition To LastPosition";
 {
-final int step8 = 1;
-final int limit8 = _lastposition;
-for (_i = _firstposition ; (step8 > 0 && _i <= limit8) || (step8 < 0 && _i >= limit8); _i = ((int)(0 + _i + step8)) ) {
+final int step491 = 1;
+final int limit491 = _lastposition;
+for (_i = _firstposition; (step491 > 0 && _i <= limit491) || (step491 < 0 && _i >= limit491); _i = ((int)(0 + _i + step491))) {
  //BA.debugLineNum = 574;BA.debugLine="Dim SortData As typSortData";
 _sortdata = new com.delozoya.Consola.Completa.clschecklist._typsortdata();
  //BA.debugLineNum = 575;BA.debugLine="SortData.Initialize";
@@ -2129,18 +2129,18 @@ _panellist = new anywheresoftware.b4a.objects.collections.List();
 _panellist.Initialize();
  //BA.debugLineNum = 588;BA.debugLine="For i = 0 To FirstPosition - 1";
 {
-final int step21 = 1;
-final int limit21 = (int) (_firstposition-1);
-for (_i = (int) (0) ; (step21 > 0 && _i <= limit21) || (step21 < 0 && _i >= limit21); _i = ((int)(0 + _i + step21)) ) {
+final int step504 = 1;
+final int limit504 = (int) (_firstposition-1);
+for (_i = (int) (0); (step504 > 0 && _i <= limit504) || (step504 < 0 && _i >= limit504); _i = ((int)(0 + _i + step504))) {
  //BA.debugLineNum = 589;BA.debugLine="PanelList.Add(sv.Panel.GetView(i))";
 _panellist.Add((Object)(_sv.getPanel().GetView(_i).getObject()));
  }
 };
  //BA.debugLineNum = 591;BA.debugLine="For i = FirstPosition To LastPosition";
 {
-final int step24 = 1;
-final int limit24 = _lastposition;
-for (_i = _firstposition ; (step24 > 0 && _i <= limit24) || (step24 < 0 && _i >= limit24); _i = ((int)(0 + _i + step24)) ) {
+final int step507 = 1;
+final int limit507 = _lastposition;
+for (_i = _firstposition; (step507 > 0 && _i <= limit507) || (step507 < 0 && _i >= limit507); _i = ((int)(0 + _i + step507))) {
  //BA.debugLineNum = 592;BA.debugLine="Dim SortData As typSortData";
 _sortdata = new com.delozoya.Consola.Completa.clschecklist._typsortdata();
  //BA.debugLineNum = 593;BA.debugLine="SortData = SortList.Get(i - FirstPosition)";
@@ -2162,9 +2162,9 @@ if (_firsttosort==-1) {
 if (true) return "";};
  //BA.debugLineNum = 601;BA.debugLine="For i = LastPosition + 1 To NumberOfItems - 1";
 {
-final int step34 = 1;
-final int limit34 = (int) (_numberofitems()-1);
-for (_i = (int) (_lastposition+1) ; (step34 > 0 && _i <= limit34) || (step34 < 0 && _i >= limit34); _i = ((int)(0 + _i + step34)) ) {
+final int step517 = 1;
+final int limit517 = (int) (_numberofitems()-1);
+for (_i = (int) (_lastposition+1); (step517 > 0 && _i <= limit517) || (step517 < 0 && _i >= limit517); _i = ((int)(0 + _i + step517))) {
  //BA.debugLineNum = 602;BA.debugLine="PanelList.Add(sv.Panel.GetView(i))";
 _panellist.Add((Object)(_sv.getPanel().GetView(_i).getObject()));
  }
@@ -2185,9 +2185,9 @@ _totalheight = (int) (_pnl.getTop()+_pnl.getHeight());
  };
  //BA.debugLineNum = 613;BA.debugLine="For i = FirstToSort To LastToSort";
 {
-final int step44 = 1;
-final int limit44 = _lasttosort;
-for (_i = _firsttosort ; (step44 > 0 && _i <= limit44) || (step44 < 0 && _i >= limit44); _i = ((int)(0 + _i + step44)) ) {
+final int step527 = 1;
+final int limit527 = _lasttosort;
+for (_i = _firsttosort; (step527 > 0 && _i <= limit527) || (step527 < 0 && _i >= limit527); _i = ((int)(0 + _i + step527))) {
  //BA.debugLineNum = 614;BA.debugLine="pnl = PanelList.Get(i)";
 _pnl.setObject((android.view.ViewGroup)(_panellist.Get(_i)));
  //BA.debugLineNum = 615;BA.debugLine="pnl.Top = TotalHeight";
@@ -2200,9 +2200,9 @@ _totalheight = (int) (_pnl.getTop()+_pnl.getHeight());
 if (_lasttosort<_numberofitems()-_firsttosort) { 
  //BA.debugLineNum = 622;BA.debugLine="For i = 0 To LastToSort";
 {
-final int step50 = 1;
-final int limit50 = _lasttosort;
-for (_i = (int) (0) ; (step50 > 0 && _i <= limit50) || (step50 < 0 && _i >= limit50); _i = ((int)(0 + _i + step50)) ) {
+final int step533 = 1;
+final int limit533 = _lasttosort;
+for (_i = (int) (0); (step533 > 0 && _i <= limit533) || (step533 < 0 && _i >= limit533); _i = ((int)(0 + _i + step533))) {
  //BA.debugLineNum = 623;BA.debugLine="pnl = PanelList.Get(LastToSort - i)";
 _pnl.setObject((android.view.ViewGroup)(_panellist.Get((int) (_lasttosort-_i))));
  //BA.debugLineNum = 624;BA.debugLine="pnl.SendToBack";
@@ -2212,9 +2212,9 @@ _pnl.SendToBack();
  }else {
  //BA.debugLineNum = 628;BA.debugLine="For i = FirstToSort To NumberOfItems - 1";
 {
-final int step55 = 1;
-final int limit55 = (int) (_numberofitems()-1);
-for (_i = _firsttosort ; (step55 > 0 && _i <= limit55) || (step55 < 0 && _i >= limit55); _i = ((int)(0 + _i + step55)) ) {
+final int step538 = 1;
+final int limit538 = (int) (_numberofitems()-1);
+for (_i = _firsttosort; (step538 > 0 && _i <= limit538) || (step538 < 0 && _i >= limit538); _i = ((int)(0 + _i + step538))) {
  //BA.debugLineNum = 629;BA.debugLine="pnl = PanelList.Get(i)";
 _pnl.setObject((android.view.ViewGroup)(_panellist.Get(_i)));
  //BA.debugLineNum = 630;BA.debugLine="pnl.BringToFront";
@@ -2269,7 +2269,7 @@ int _tmptop = 0;
 int _i = 0;
 int _delta = 0;
  //BA.debugLineNum = 348;BA.debugLine="Public Sub SwapItems(PosItem1 As Int, PosItem2 As";
- //BA.debugLineNum = 349;BA.debugLine="If sv.IsInitialized AND PosItem1 <> PosItem2 Then";
+ //BA.debugLineNum = 349;BA.debugLine="If sv.IsInitialized And PosItem1 <> PosItem2 Then";
 if (_sv.IsInitialized() && _positem1!=_positem2) { 
  //BA.debugLineNum = 350;BA.debugLine="If HasExtraContent Then CollapseItem";
 if (_hasextracontent()) { 
@@ -2310,9 +2310,9 @@ if (_posmax<_numberofitems()-_posmax) {
 _pmin.SendToBack();
  //BA.debugLineNum = 371;BA.debugLine="For i = PosMin + 1 To PosMax - 1";
 {
-final int step19 = 1;
-final int limit19 = (int) (_posmax-1);
-for (_i = (int) (_posmin+1) ; (step19 > 0 && _i <= limit19) || (step19 < 0 && _i >= limit19); _i = ((int)(0 + _i + step19)) ) {
+final int step322 = 1;
+final int limit322 = (int) (_posmax-1);
+for (_i = (int) (_posmin+1); (step322 > 0 && _i <= limit322) || (step322 < 0 && _i >= limit322); _i = ((int)(0 + _i + step322))) {
  //BA.debugLineNum = 372;BA.debugLine="pnl = sv.Panel.GetView(PosMax - 1)";
 _pnl.setObject((android.view.ViewGroup)(_sv.getPanel().GetView((int) (_posmax-1)).getObject()));
  //BA.debugLineNum = 373;BA.debugLine="pnl.SendToBack";
@@ -2323,9 +2323,9 @@ _pnl.SendToBack();
 _pmax.SendToBack();
  //BA.debugLineNum = 376;BA.debugLine="For i = 0 To PosMin - 1";
 {
-final int step24 = 1;
-final int limit24 = (int) (_posmin-1);
-for (_i = (int) (0) ; (step24 > 0 && _i <= limit24) || (step24 < 0 && _i >= limit24); _i = ((int)(0 + _i + step24)) ) {
+final int step327 = 1;
+final int limit327 = (int) (_posmin-1);
+for (_i = (int) (0); (step327 > 0 && _i <= limit327) || (step327 < 0 && _i >= limit327); _i = ((int)(0 + _i + step327))) {
  //BA.debugLineNum = 377;BA.debugLine="pnl = sv.Panel.GetView(PosMax)";
 _pnl.setObject((android.view.ViewGroup)(_sv.getPanel().GetView(_posmax).getObject()));
  //BA.debugLineNum = 378;BA.debugLine="pnl.SendToBack";
@@ -2337,9 +2337,9 @@ _pnl.SendToBack();
 _pmax.BringToFront();
  //BA.debugLineNum = 382;BA.debugLine="For i = PosMin + 1 To PosMax - 1";
 {
-final int step30 = 1;
-final int limit30 = (int) (_posmax-1);
-for (_i = (int) (_posmin+1) ; (step30 > 0 && _i <= limit30) || (step30 < 0 && _i >= limit30); _i = ((int)(0 + _i + step30)) ) {
+final int step333 = 1;
+final int limit333 = (int) (_posmax-1);
+for (_i = (int) (_posmin+1); (step333 > 0 && _i <= limit333) || (step333 < 0 && _i >= limit333); _i = ((int)(0 + _i + step333))) {
  //BA.debugLineNum = 383;BA.debugLine="pnl = sv.Panel.GetView(PosMin + 1)";
 _pnl.setObject((android.view.ViewGroup)(_sv.getPanel().GetView((int) (_posmin+1)).getObject()));
  //BA.debugLineNum = 384;BA.debugLine="pnl.BringToFront";
@@ -2350,9 +2350,9 @@ _pnl.BringToFront();
 _pmin.BringToFront();
  //BA.debugLineNum = 387;BA.debugLine="For i = PosMax + 1 To NumberOfItems - 1";
 {
-final int step35 = 1;
-final int limit35 = (int) (_numberofitems()-1);
-for (_i = (int) (_posmax+1) ; (step35 > 0 && _i <= limit35) || (step35 < 0 && _i >= limit35); _i = ((int)(0 + _i + step35)) ) {
+final int step338 = 1;
+final int limit338 = (int) (_numberofitems()-1);
+for (_i = (int) (_posmax+1); (step338 > 0 && _i <= limit338) || (step338 < 0 && _i >= limit338); _i = ((int)(0 + _i + step338))) {
  //BA.debugLineNum = 388;BA.debugLine="pnl = sv.Panel.GetView(PosMin)";
 _pnl.setObject((android.view.ViewGroup)(_sv.getPanel().GetView(_posmin).getObject()));
  //BA.debugLineNum = 389;BA.debugLine="pnl.BringToFront";
@@ -2368,9 +2368,9 @@ if (_pmin.getHeight()!=_pmax.getHeight()) {
 _delta = (int) (_pmin.getHeight()-_pmax.getHeight());
  //BA.debugLineNum = 397;BA.debugLine="For i = PosMin + 1 To PosMax";
 {
-final int step43 = 1;
-final int limit43 = _posmax;
-for (_i = (int) (_posmin+1) ; (step43 > 0 && _i <= limit43) || (step43 < 0 && _i >= limit43); _i = ((int)(0 + _i + step43)) ) {
+final int step346 = 1;
+final int limit346 = _posmax;
+for (_i = (int) (_posmin+1); (step346 > 0 && _i <= limit346) || (step346 < 0 && _i >= limit346); _i = ((int)(0 + _i + step346))) {
  //BA.debugLineNum = 398;BA.debugLine="pnl = sv.Panel.GetView(i)";
 _pnl.setObject((android.view.ViewGroup)(_sv.getPanel().GetView(_i).getObject()));
  //BA.debugLineNum = 399;BA.debugLine="pnl.Top = pnl.Top - Delta";

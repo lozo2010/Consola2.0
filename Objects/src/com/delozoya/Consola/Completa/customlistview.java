@@ -15,12 +15,13 @@ public class customlistview extends B4AClass.ImplB4AClass implements BA.SubDeleg
                 ba.loadHtSubs(this.getClass());
                 htSubs = ba.htSubs;
             }
-            
+            if (BA.isShellModeRuntimeCheck(ba)) {
+			    ba.raiseEvent2(null, true, "CREATE", true, "com.delozoya.Consola.Completa.customlistview",
+                    ba);
+                return;
+		    }
         }
-        if (BA.isShellModeRuntimeCheck(ba)) 
-			   this.getClass().getMethod("_class_globals", com.delozoya.Consola.Completa.customlistview.class).invoke(this, new Object[] {null});
-        else
-            ba.raiseEvent2(null, true, "class_globals", false);
+        ba.raiseEvent2(null, true, "class_globals", false);
     }
 
  public anywheresoftware.b4a.keywords.Common __c = null;
@@ -38,7 +39,6 @@ public int _defaulttextbackgroundcolor = 0;
 public Object _defaulttextbackground = null;
 public com.delozoya.Consola.Completa.main _main = null;
 public com.delozoya.Consola.Completa.f1a _f1a = null;
-public com.delozoya.Consola.Completa.f1b1 _f1b1 = null;
 public com.delozoya.Consola.Completa.f1c _f1c = null;
 public com.delozoya.Consola.Completa.f1b _f1b = null;
 public String  _add(anywheresoftware.b4a.objects.PanelWrapper _pnl,int _itemheight,Object _value) throws Exception{
@@ -102,9 +102,9 @@ _panels.Clear();
 _sv.getPanel().setHeight((int) (0));
  //BA.debugLineNum = 61;BA.debugLine="For i = sv.Panel.NumberOfViews - 1 To 0 Step -1";
 {
-final int step4 = (int) (-1);
-final int limit4 = (int) (0);
-for (_i = (int) (_sv.getPanel().getNumberOfViews()-1) ; (step4 > 0 && _i <= limit4) || (step4 < 0 && _i >= limit4); _i = ((int)(0 + _i + step4)) ) {
+final int step51 = (int) (-1);
+final int limit51 = (int) (0);
+for (_i = (int) (_sv.getPanel().getNumberOfViews()-1); (step51 > 0 && _i <= limit51) || (step51 < 0 && _i >= limit51); _i = ((int)(0 + _i + step51))) {
  //BA.debugLineNum = 62;BA.debugLine="sv.Panel.RemoveViewAt(i)";
 _sv.getPanel().RemoveViewAt(_i);
  }
@@ -301,9 +301,9 @@ _top = (int) (_previouspanel.getTop()+_previouspanel.getHeight()+_dividerheight)
 _p2 = new anywheresoftware.b4a.objects.PanelWrapper();
  //BA.debugLineNum = 162;BA.debugLine="For i = Index To panels.Size - 1";
 {
-final int step29 = 1;
-final int limit29 = (int) (_panels.getSize()-1);
-for (_i = _index ; (step29 > 0 && _i <= limit29) || (step29 < 0 && _i >= limit29); _i = ((int)(0 + _i + step29)) ) {
+final int step131 = 1;
+final int limit131 = (int) (_panels.getSize()-1);
+for (_i = _index; (step131 > 0 && _i <= limit131) || (step131 < 0 && _i >= limit131); _i = ((int)(0 + _i + step131))) {
  //BA.debugLineNum = 163;BA.debugLine="p2 = panels.Get(i)";
 _p2.setObject((android.view.ViewGroup)(_panels.Get(_i)));
  //BA.debugLineNum = 164;BA.debugLine="p2.top = p2.top + ItemHeight + dividerHeight";
@@ -380,9 +380,9 @@ _top = 0;
 _p = new anywheresoftware.b4a.objects.PanelWrapper();
  //BA.debugLineNum = 184;BA.debugLine="For i = 0 To Min(Index - 1, items.Size - 1)";
 {
-final int step3 = 1;
-final int limit3 = (int) (__c.Min(_index-1,_items.getSize()-1));
-for (_i = (int) (0) ; (step3 > 0 && _i <= limit3) || (step3 < 0 && _i >= limit3); _i = ((int)(0 + _i + step3)) ) {
+final int step149 = 1;
+final int limit149 = (int) (__c.Min(_index-1,_items.getSize()-1));
+for (_i = (int) (0); (step149 > 0 && _i <= limit149) || (step149 < 0 && _i >= limit149); _i = ((int)(0 + _i + step149))) {
  //BA.debugLineNum = 185;BA.debugLine="p = panels.Get(i)";
 _p.setObject((android.view.ViewGroup)(_panels.Get(_i)));
  //BA.debugLineNum = 186;BA.debugLine="top = top + p.Height + dividerHeight";
@@ -427,9 +427,9 @@ _p = new anywheresoftware.b4a.objects.PanelWrapper();
 _removepanel.setObject((android.view.ViewGroup)(_panels.Get(_index)));
  //BA.debugLineNum = 89;BA.debugLine="For i = Index + 1 To items.Size - 1";
 {
-final int step3 = 1;
-final int limit3 = (int) (_items.getSize()-1);
-for (_i = (int) (_index+1) ; (step3 > 0 && _i <= limit3) || (step3 < 0 && _i >= limit3); _i = ((int)(0 + _i + step3)) ) {
+final int step69 = 1;
+final int limit69 = (int) (_items.getSize()-1);
+for (_i = (int) (_index+1); (step69 > 0 && _i <= limit69) || (step69 < 0 && _i >= limit69); _i = ((int)(0 + _i + step69))) {
  //BA.debugLineNum = 90;BA.debugLine="p = panels.Get(i)";
 _p.setObject((android.view.ViewGroup)(_panels.Get(_i)));
  //BA.debugLineNum = 91;BA.debugLine="p.Tag = i - 1";

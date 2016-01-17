@@ -311,7 +311,6 @@ public class main extends Activity implements B4AActivity{
 public anywheresoftware.b4a.keywords.Common __c = null;
 public com.delozoya.Consola.Completa.custommsgbox _msg = null;
 public com.delozoya.Consola.Completa.f1a _f1a = null;
-public com.delozoya.Consola.Completa.f1b1 _f1b1 = null;
 public com.delozoya.Consola.Completa.f1c _f1c = null;
 public com.delozoya.Consola.Completa.f1b _f1b = null;
 
@@ -319,7 +318,6 @@ public static boolean isAnyActivityVisible() {
     boolean vis = false;
 vis = vis | (main.mostCurrent != null);
 vis = vis | (f1a.mostCurrent != null);
-vis = vis | (f1b1.mostCurrent != null);
 vis = vis | (f1c.mostCurrent != null);
 vis = vis | (f1b.mostCurrent != null);
 return vis;}
@@ -411,7 +409,6 @@ public static void initializeProcessGlobals() {
 		try {
 		        main._process_globals();
 f1a._process_globals();
-f1b1._process_globals();
 f1c._process_globals();
 f1b._process_globals();
 		

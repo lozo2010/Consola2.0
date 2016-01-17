@@ -406,7 +406,6 @@ public static boolean _flag_lectura = false;
 public static int _t = 0;
 public static boolean _flag_inicio_usb = false;
 public com.delozoya.Consola.Completa.main _main = null;
-public com.delozoya.Consola.Completa.f1b1 _f1b1 = null;
 public com.delozoya.Consola.Completa.f1c _f1c = null;
 public com.delozoya.Consola.Completa.f1b _f1b = null;
 
@@ -433,20 +432,20 @@ if (_nombre.contains("PRUEBA")) {
  //BA.debugLineNum = 3129;BA.debugLine="strspinner=\"PRUEBA\"";
 _strspinner = "PRUEBA";
  };
- //BA.debugLineNum = 3131;BA.debugLine="If nombre.Contains(\"PRIMERA HORA\") Then";
-if (_nombre.contains("PRIMERA HORA")) { 
- //BA.debugLineNum = 3132;BA.debugLine="strspinner=\"PRIMERA HORA\"";
-_strspinner = "PRIMERA HORA";
+ //BA.debugLineNum = 3131;BA.debugLine="If nombre.Contains(\"1ª.HORA\") Then";
+if (_nombre.contains("1ª.HORA")) { 
+ //BA.debugLineNum = 3132;BA.debugLine="strspinner=\"1ª.HORA\"";
+_strspinner = "1ª.HORA";
  };
- //BA.debugLineNum = 3134;BA.debugLine="If nombre.Contains(\"VIENTO ALTO\") Then";
-if (_nombre.contains("VIENTO ALTO")) { 
- //BA.debugLineNum = 3135;BA.debugLine="strspinner=\"VIENTO ALTO\"";
-_strspinner = "VIENTO ALTO";
+ //BA.debugLineNum = 3134;BA.debugLine="If nombre.Contains(\"V.ALTO\") Then";
+if (_nombre.contains("V.ALTO")) { 
+ //BA.debugLineNum = 3135;BA.debugLine="strspinner=\"V.ALTO\"";
+_strspinner = "V.ALTO";
  };
- //BA.debugLineNum = 3137;BA.debugLine="If nombre.Contains(\"VIENTO MEDIO\") Then";
-if (_nombre.contains("VIENTO MEDIO")) { 
- //BA.debugLineNum = 3138;BA.debugLine="strspinner=\"VIENTO MEDIO\"";
-_strspinner = "VIENTO MEDIO";
+ //BA.debugLineNum = 3137;BA.debugLine="If nombre.Contains(\"V.MEDIO\") Then";
+if (_nombre.contains("V.MEDIO")) { 
+ //BA.debugLineNum = 3138;BA.debugLine="strspinner=\"V.MEDIO\"";
+_strspinner = "V.MEDIO";
  };
  //BA.debugLineNum = 3140;BA.debugLine="If nombre.Contains(\"CALMA\") Then";
 if (_nombre.contains("CALMA")) { 
@@ -487,18 +486,18 @@ if ((_strspinner).equals("PRUEBA")) {
  //BA.debugLineNum = 2877;BA.debugLine="spconfig.SelectedIndex=1";
 mostCurrent._spconfig.setSelectedIndex((int) (1));
  };
- //BA.debugLineNum = 2879;BA.debugLine="If strspinner=\"PRIMERA HORA\" Then";
-if ((_strspinner).equals("PRIMERA HORA")) { 
+ //BA.debugLineNum = 2879;BA.debugLine="If strspinner=\"1ª.HORA\" Then";
+if ((_strspinner).equals("1ª.HORA")) { 
  //BA.debugLineNum = 2880;BA.debugLine="spconfig.SelectedIndex=2";
 mostCurrent._spconfig.setSelectedIndex((int) (2));
  };
- //BA.debugLineNum = 2882;BA.debugLine="If strspinner=\"VIENTO ALTO\" Then";
-if ((_strspinner).equals("VIENTO ALTO")) { 
+ //BA.debugLineNum = 2882;BA.debugLine="If strspinner=\"V.ALTO\" Then";
+if ((_strspinner).equals("V.ALTO")) { 
  //BA.debugLineNum = 2883;BA.debugLine="spconfig.SelectedIndex=3";
 mostCurrent._spconfig.setSelectedIndex((int) (3));
  };
- //BA.debugLineNum = 2885;BA.debugLine="If strspinner=\"VIENTO MEDIO\" Then";
-if ((_strspinner).equals("VIENTO MEDIO")) { 
+ //BA.debugLineNum = 2885;BA.debugLine="If strspinner=\"V.MEDIO\" Then";
+if ((_strspinner).equals("V.MEDIO")) { 
  //BA.debugLineNum = 2886;BA.debugLine="spconfig.SelectedIndex=4";
 mostCurrent._spconfig.setSelectedIndex((int) (4));
  };
@@ -518,9 +517,9 @@ if (anywheresoftware.b4a.keywords.Common.File.Exists(anywheresoftware.b4a.keywor
 mostCurrent._lbmodelo.setText((Object)(mostCurrent._nombre_fichero));
  //BA.debugLineNum = 2901;BA.debugLine="strModelo=\"Modelo_F1A_\"&NOMBRE_FICHERO";
 _strmodelo = "Modelo_F1A_"+mostCurrent._nombre_fichero;
- //BA.debugLineNum = 2902;BA.debugLine="lista1=File.ReadList(File.DirRootExternal & \"/Con";
+ //BA.debugLineNum = 2902;BA.debugLine="lista1=File.ReadList(File.DirRootExternal & \"/C";
 mostCurrent._lista1 = anywheresoftware.b4a.keywords.Common.File.ReadList(anywheresoftware.b4a.keywords.Common.File.getDirRootExternal()+"/Consola/F1A","Modelo_F1A_"+mostCurrent._nombre_fichero);
- //BA.debugLineNum = 2903;BA.debugLine="listaconfiguracion=File.ReadList(File.DirRootExte";
+ //BA.debugLineNum = 2903;BA.debugLine="listaconfiguracion=File.ReadList(File.DirRootEx";
 mostCurrent._listaconfiguracion = anywheresoftware.b4a.keywords.Common.File.ReadList(anywheresoftware.b4a.keywords.Common.File.getDirRootExternal()+"/Consola/F1A/configuracion","Modelo_F1A_"+mostCurrent._nombre_fichero);
  //BA.debugLineNum = 2906;BA.debugLine="If listaconfiguracion.Get(0)=\"0\" Then";
 if ((mostCurrent._listaconfiguracion.Get((int) (0))).equals((Object)("0"))) { 
@@ -616,9 +615,9 @@ mostCurrent._lvdatos.AddSingleLine("GANCHO/FLAP 5   Giro: "+BA.ObjectToString(mo
 anywheresoftware.b4a.keywords.Common.Log("Tamaño Lista "+BA.NumberToString(mostCurrent._lista1.getSize()));
  //BA.debugLineNum = 2986;BA.debugLine="For i=20 To lista1.Size-1 Step 4";
 {
-final int step79 = (int) (4);
-final int limit79 = (int) (mostCurrent._lista1.getSize()-1);
-for (_i = (int) (20) ; (step79 > 0 && _i <= limit79) || (step79 < 0 && _i >= limit79); _i = ((int)(0 + _i + step79)) ) {
+final int step1903 = (int) (4);
+final int limit1903 = (int) (mostCurrent._lista1.getSize()-1);
+for (_i = (int) (20); (step1903 > 0 && _i <= limit1903) || (step1903 < 0 && _i >= limit1903); _i = ((int)(0 + _i + step1903))) {
  //BA.debugLineNum = 2987;BA.debugLine="tiempo_aux=lista1.Get(i)";
 mostCurrent._tiempo_aux = BA.ObjectToString(mostCurrent._lista1.Get(_i));
  //BA.debugLineNum = 2988;BA.debugLine="tiempo_minimo=lista1.get(i)";
@@ -686,9 +685,9 @@ if ((mostCurrent._tipo_tiempo_aux).equals("2")) {
  //BA.debugLineNum = 3034;BA.debugLine="tipo_tiempo_aux=\"MINUTOS\"";
 mostCurrent._tipo_tiempo_aux = "MINUTOS";
  };
- //BA.debugLineNum = 3036;BA.debugLine="lvDatos.SingleLineLayout.Label.TextColor=Co";
+ //BA.debugLineNum = 3036;BA.debugLine="lvDatos.SingleLineLayout.Label.TextColor=";
 mostCurrent._lvdatos.getSingleLineLayout().Label.setTextColor(anywheresoftware.b4a.keywords.Common.Colors.Black);
- //BA.debugLineNum = 3038;BA.debugLine="lvDatos.AddSingleLine(servo_aux_nombre&\"   Gir";
+ //BA.debugLineNum = 3038;BA.debugLine="lvDatos.AddSingleLine(servo_aux_nombre&\"   G";
 mostCurrent._lvdatos.AddSingleLine(mostCurrent._servo_aux_nombre+"   Giro: "+mostCurrent._giro_aux+"    Tiempo: "+mostCurrent._tiempo_aux+"  Tipo tiempo: "+mostCurrent._tipo_tiempo_aux);
  }
 };
@@ -748,8 +747,8 @@ mostCurrent._lbservotxt.setVisible(anywheresoftware.b4a.keywords.Common.True);
  //BA.debugLineNum = 3071;BA.debugLine="ime1.HideKeyboard";
 mostCurrent._ime1.HideKeyboard(mostCurrent.activityBA);
  } 
-       catch (Exception e1976) {
-			processBA.setLastException(e1976); //BA.debugLineNum = 3077;BA.debugLine="If File.Exists(File.DirRootExternal & \"/Consola/";
+       catch (Exception e1975) {
+			processBA.setLastException(e1975); //BA.debugLineNum = 3077;BA.debugLine="If File.Exists(File.DirRootExternal & \"/Consola/";
 if (anywheresoftware.b4a.keywords.Common.File.Exists(anywheresoftware.b4a.keywords.Common.File.getDirRootExternal()+"/Consola/F1A","Modelo_F1A_"+mostCurrent._nombre_fichero)==anywheresoftware.b4a.keywords.Common.True) { 
  //BA.debugLineNum = 3078;BA.debugLine="lista1.Clear";
 mostCurrent._lista1.Clear();
@@ -757,8 +756,6 @@ mostCurrent._lista1.Clear();
 mostCurrent._lbmodelo.setText((Object)(mostCurrent._nombre_fichero));
  //BA.debugLineNum = 3082;BA.debugLine="strModelo=\"Modelo_F1A_\"&NOMBRE_FICHERO";
 _strmodelo = "Modelo_F1A_"+mostCurrent._nombre_fichero;
- //BA.debugLineNum = 3083;BA.debugLine="lvDatos.Clear";
-mostCurrent._lvdatos.Clear();
  //BA.debugLineNum = 3084;BA.debugLine="Panel1.Visible=False";
 mostCurrent._panel1.setVisible(anywheresoftware.b4a.keywords.Common.False);
  //BA.debugLineNum = 3085;BA.debugLine="spServo.Visible=False";
@@ -783,8 +780,6 @@ mostCurrent._label8.setVisible(anywheresoftware.b4a.keywords.Common.True);
 mostCurrent._panel2.setVisible(anywheresoftware.b4a.keywords.Common.True);
  //BA.debugLineNum = 3095;BA.debugLine="Label5.Visible=True";
 mostCurrent._label5.setVisible(anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 3096;BA.debugLine="lbNumeroServo.Visible=True";
-mostCurrent._lbnumeroservo.setVisible(anywheresoftware.b4a.keywords.Common.True);
  //BA.debugLineNum = 3097;BA.debugLine="tiempo_minimo=0";
 _tiempo_minimo = (int) (0);
  //BA.debugLineNum = 3098;BA.debugLine="lbNumeroServo.Text=\"STABILO\"";
@@ -887,12 +882,12 @@ mostCurrent._sptiempo.Add("MINUTOS");
 mostCurrent._spconfig.Add("PULSE AQUI");
  //BA.debugLineNum = 203;BA.debugLine="spconfig.Add(\"PRUEBA\")";
 mostCurrent._spconfig.Add("PRUEBA");
- //BA.debugLineNum = 204;BA.debugLine="spconfig.Add(\"PRIMERA HORA\")";
-mostCurrent._spconfig.Add("PRIMERA HORA");
- //BA.debugLineNum = 205;BA.debugLine="spconfig.Add(\"VIENTO ALTO\")";
-mostCurrent._spconfig.Add("VIENTO ALTO");
- //BA.debugLineNum = 206;BA.debugLine="spconfig.Add(\"VIENTO MEDIO\")";
-mostCurrent._spconfig.Add("VIENTO MEDIO");
+ //BA.debugLineNum = 204;BA.debugLine="spconfig.Add(\"1ª.HORA\")";
+mostCurrent._spconfig.Add("1ª.HORA");
+ //BA.debugLineNum = 205;BA.debugLine="spconfig.Add(\"V.ALTO\")";
+mostCurrent._spconfig.Add("V.ALTO");
+ //BA.debugLineNum = 206;BA.debugLine="spconfig.Add(\"V.MEDIO\")";
+mostCurrent._spconfig.Add("V.MEDIO");
  //BA.debugLineNum = 207;BA.debugLine="spconfig.Add(\"CALMA\")";
 mostCurrent._spconfig.Add("CALMA");
  //BA.debugLineNum = 208;BA.debugLine="spconfig.Add(\"TERMICA\")";
@@ -1118,9 +1113,9 @@ _astreams1.Write2(_buffer_tx,(int) (0),(int) (191));
 _astreams1.Write2(_buffer_tx,(int) (192),(int) (64));
  //BA.debugLineNum = 3481;BA.debugLine="For i=0 To buffer_tx.Length-1";
 {
-final int step55 = 1;
-final int limit55 = (int) (_buffer_tx.length-1);
-for (_i = (int) (0) ; (step55 > 0 && _i <= limit55) || (step55 < 0 && _i >= limit55); _i = ((int)(0 + _i + step55)) ) {
+final int step2244 = 1;
+final int limit2244 = (int) (_buffer_tx.length-1);
+for (_i = (int) (0); (step2244 > 0 && _i <= limit2244) || (step2244 < 0 && _i >= limit2244); _i = ((int)(0 + _i + step2244))) {
  //BA.debugLineNum = 3482;BA.debugLine="Log(\"buffer grab: \"&buffer_tx(i))";
 anywheresoftware.b4a.keywords.Common.Log("buffer grab: "+BA.NumberToString(_buffer_tx[_i]));
  }
@@ -1168,9 +1163,9 @@ _filestodelete.Initialize();
 _filestodelete.AddAll(anywheresoftware.b4a.keywords.Common.File.ListFiles(anywheresoftware.b4a.keywords.Common.File.getDirRootExternal()+"/Consola/F1A"));
  //BA.debugLineNum = 3295;BA.debugLine="For I = 0 To FilesToDelete.Size -1";
 {
-final int step4 = 1;
-final int limit4 = (int) (_filestodelete.getSize()-1);
-for (_i = (int) (0) ; (step4 > 0 && _i <= limit4) || (step4 < 0 && _i >= limit4); _i = ((int)(0 + _i + step4)) ) {
+final int step2133 = 1;
+final int limit2133 = (int) (_filestodelete.getSize()-1);
+for (_i = (int) (0); (step2133 > 0 && _i <= limit2133) || (step2133 < 0 && _i >= limit2133); _i = ((int)(0 + _i + step2133))) {
  //BA.debugLineNum = 3297;BA.debugLine="File.Delete(File.DirRootExternal & \"/Consola/F";
 anywheresoftware.b4a.keywords.Common.File.Delete(anywheresoftware.b4a.keywords.Common.File.getDirRootExternal()+"/Consola/F1A",BA.ObjectToString(_filestodelete.Get(_i)));
  }
@@ -1683,9 +1678,9 @@ mostCurrent._label9.setVisible(anywheresoftware.b4a.keywords.Common.False);
 mostCurrent._lbnumeroservo.setText((Object)(""));
  //BA.debugLineNum = 2694;BA.debugLine="For i=0 To lista1.Size- 1";
 {
-final int step233 = 1;
-final int limit233 = (int) (mostCurrent._lista1.getSize()-1);
-for (_i = (int) (0) ; (step233 > 0 && _i <= limit233) || (step233 < 0 && _i >= limit233); _i = ((int)(0 + _i + step233)) ) {
+final int step1735 = 1;
+final int limit1735 = (int) (mostCurrent._lista1.getSize()-1);
+for (_i = (int) (0); (step1735 > 0 && _i <= limit1735) || (step1735 < 0 && _i >= limit1735); _i = ((int)(0 + _i + step1735))) {
  //BA.debugLineNum = 2696;BA.debugLine="Log(lista1.Get(i))";
 anywheresoftware.b4a.keywords.Common.Log(BA.ObjectToString(mostCurrent._lista1.Get(_i)));
  }
@@ -1721,8 +1716,8 @@ anywheresoftware.b4a.keywords.Common.File.WriteList(anywheresoftware.b4a.keyword
  //BA.debugLineNum = 2724;BA.debugLine="etGiro.Text=\"\"";
 mostCurrent._etgiro.setText((Object)(""));
  } 
-       catch (Exception e1756) {
-			processBA.setLastException(e1756); };
+       catch (Exception e1755) {
+			processBA.setLastException(e1755); };
  //BA.debugLineNum = 2731;BA.debugLine="End Sub";
 return "";
 }
@@ -1899,9 +1894,9 @@ mostCurrent._lvdatos.getSingleLineLayout().Label.setTextColor(anywheresoftware.b
 mostCurrent._lvdatos.AddSingleLine("GANCHO/FLAP 5   Giro: "+BA.ObjectToString(mostCurrent._lista1.Get((int) (19)))+"  PRE-START");
  //BA.debugLineNum = 1265;BA.debugLine="For i=20 To lista1.Size-1 Step 4";
 {
-final int step75 = (int) (4);
-final int limit75 = (int) (mostCurrent._lista1.getSize()-1);
-for (_i = (int) (20) ; (step75 > 0 && _i <= limit75) || (step75 < 0 && _i >= limit75); _i = ((int)(0 + _i + step75)) ) {
+final int step877 = (int) (4);
+final int limit877 = (int) (mostCurrent._lista1.getSize()-1);
+for (_i = (int) (20); (step877 > 0 && _i <= limit877) || (step877 < 0 && _i >= limit877); _i = ((int)(0 + _i + step877))) {
  //BA.debugLineNum = 1266;BA.debugLine="tiempo_aux=lista1.Get(i)";
 mostCurrent._tiempo_aux = BA.ObjectToString(mostCurrent._lista1.Get(_i));
  //BA.debugLineNum = 1267;BA.debugLine="tipo_tiempo_aux=lista1.Get(i+1)";
@@ -2019,9 +2014,9 @@ mostCurrent._listaconfiguracion.Set((int) (0),(Object)("0"));
  };
  //BA.debugLineNum = 3608;BA.debugLine="For i=0 To listaconfiguracion.Size-1";
 {
-final int step8 = 1;
-final int limit8 = (int) (mostCurrent._listaconfiguracion.getSize()-1);
-for (_i = (int) (0) ; (step8 > 0 && _i <= limit8) || (step8 < 0 && _i >= limit8); _i = ((int)(0 + _i + step8)) ) {
+final int step2314 = 1;
+final int limit2314 = (int) (mostCurrent._listaconfiguracion.getSize()-1);
+for (_i = (int) (0); (step2314 > 0 && _i <= limit2314) || (step2314 < 0 && _i >= limit2314); _i = ((int)(0 + _i + step2314))) {
  //BA.debugLineNum = 3609;BA.debugLine="Log(listaconfiguracion.Get(i))";
 anywheresoftware.b4a.keywords.Common.Log(BA.ObjectToString(mostCurrent._listaconfiguracion.Get(_i)));
  }
@@ -2185,8 +2180,8 @@ mostCurrent._etgiro.setText((Object)(""));
  };
  };
  } 
-       catch (Exception e1366) {
-			processBA.setLastException(e1366); };
+       catch (Exception e1365) {
+			processBA.setLastException(e1365); };
  //BA.debugLineNum = 2001;BA.debugLine="End Sub";
 return "";
 }
@@ -2566,8 +2561,8 @@ mostCurrent._btok.setVisible(anywheresoftware.b4a.keywords.Common.False);
  //BA.debugLineNum = 2040;BA.debugLine="tiempo_actual=0";
 _tiempo_actual = (int) (0);
  } 
-       catch (Exception e1404) {
-			processBA.setLastException(e1404); };
+       catch (Exception e1403) {
+			processBA.setLastException(e1403); };
  //BA.debugLineNum = 2045;BA.debugLine="End Sub";
 return "";
 }
@@ -2861,9 +2856,9 @@ anywheresoftware.b4a.keywords.Common.Log("------------------------------");
 anywheresoftware.b4a.keywords.Common.Log("------------------------------");
  //BA.debugLineNum = 2313;BA.debugLine="For i=0 To lista1.Size- 1";
 {
-final int step54 = 1;
-final int limit54 = (int) (mostCurrent._lista1.getSize()-1);
-for (_i = (int) (0) ; (step54 > 0 && _i <= limit54) || (step54 < 0 && _i >= limit54); _i = ((int)(0 + _i + step54)) ) {
+final int step1465 = 1;
+final int limit1465 = (int) (mostCurrent._lista1.getSize()-1);
+for (_i = (int) (0); (step1465 > 0 && _i <= limit1465) || (step1465 < 0 && _i >= limit1465); _i = ((int)(0 + _i + step1465))) {
  //BA.debugLineNum = 2315;BA.debugLine="Log(lista1.Get(i))";
 anywheresoftware.b4a.keywords.Common.Log(BA.ObjectToString(mostCurrent._lista1.Get(_i)));
  }
@@ -2925,8 +2920,8 @@ mostCurrent._ettiempo.setEnabled(anywheresoftware.b4a.keywords.Common.False);
  //BA.debugLineNum = 2355;BA.debugLine="etGiro.Enabled=False";
 mostCurrent._etgiro.setEnabled(anywheresoftware.b4a.keywords.Common.False);
  } 
-       catch (Exception e1501) {
-			processBA.setLastException(e1501); };
+       catch (Exception e1500) {
+			processBA.setLastException(e1500); };
  //BA.debugLineNum = 2360;BA.debugLine="End Sub";
 return "";
 }
@@ -2981,18 +2976,18 @@ byte[] _b = null;
  //BA.debugLineNum = 3564;BA.debugLine="Sub Leer_fichero";
  //BA.debugLineNum = 3569;BA.debugLine="For i=0 To lista1.Size-1";
 {
-final int step1 = 1;
-final int limit1 = (int) (mostCurrent._lista1.getSize()-1);
-for (_i = (int) (0) ; (step1 > 0 && _i <= limit1) || (step1 < 0 && _i >= limit1); _i = ((int)(0 + _i + step1)) ) {
+final int step2286 = 1;
+final int limit2286 = (int) (mostCurrent._lista1.getSize()-1);
+for (_i = (int) (0); (step2286 > 0 && _i <= limit2286) || (step2286 < 0 && _i >= limit2286); _i = ((int)(0 + _i + step2286))) {
  //BA.debugLineNum = 3571;BA.debugLine="buffer_tx(i)=lista1.Get(i)";
 _buffer_tx[_i] = (byte)(BA.ObjectToNumber(mostCurrent._lista1.Get(_i)));
  }
 };
  //BA.debugLineNum = 3574;BA.debugLine="For i=lista1.Size To 255";
 {
-final int step4 = 1;
-final int limit4 = (int) (255);
-for (_i = mostCurrent._lista1.getSize() ; (step4 > 0 && _i <= limit4) || (step4 < 0 && _i >= limit4); _i = ((int)(0 + _i + step4)) ) {
+final int step2289 = 1;
+final int limit2289 = (int) (255);
+for (_i = mostCurrent._lista1.getSize(); (step2289 > 0 && _i <= limit2289) || (step2289 < 0 && _i >= limit2289); _i = ((int)(0 + _i + step2289))) {
  //BA.debugLineNum = 3575;BA.debugLine="buffer_tx(i)=0";
 _buffer_tx[_i] = (byte) (0);
  }
@@ -3012,18 +3007,18 @@ _aux = BA.ObjectToString(mostCurrent._listaconfiguracion.Get((int) (1)));
 _b = _aux.getBytes("UTF-8");
  //BA.debugLineNum = 3585;BA.debugLine="For i=0 To b.Length-1";
 {
-final int step13 = 1;
-final int limit13 = (int) (_b.length-1);
-for (_i = (int) (0) ; (step13 > 0 && _i <= limit13) || (step13 < 0 && _i >= limit13); _i = ((int)(0 + _i + step13)) ) {
+final int step2298 = 1;
+final int limit2298 = (int) (_b.length-1);
+for (_i = (int) (0); (step2298 > 0 && _i <= limit2298) || (step2298 < 0 && _i >= limit2298); _i = ((int)(0 + _i + step2298))) {
  //BA.debugLineNum = 3586;BA.debugLine="buffer_tx(i+224)=b(i)";
 _buffer_tx[(int) (_i+224)] = _b[_i];
  }
 };
  //BA.debugLineNum = 3590;BA.debugLine="For i=0 To 255";
 {
-final int step16 = 1;
-final int limit16 = (int) (255);
-for (_i = (int) (0) ; (step16 > 0 && _i <= limit16) || (step16 < 0 && _i >= limit16); _i = ((int)(0 + _i + step16)) ) {
+final int step2301 = 1;
+final int limit2301 = (int) (255);
+for (_i = (int) (0); (step2301 > 0 && _i <= limit2301) || (step2301 < 0 && _i >= limit2301); _i = ((int)(0 + _i + step2301))) {
  //BA.debugLineNum = 3591;BA.debugLine="Log(buffer_tx(i))";
 anywheresoftware.b4a.keywords.Common.Log(BA.NumberToString(_buffer_tx[_i]));
  }
@@ -3050,9 +3045,9 @@ int _i = 0;
  //BA.debugLineNum = 2750;BA.debugLine="Sub log_lista";
  //BA.debugLineNum = 2751;BA.debugLine="For i=0 To lista1.Size- 1";
 {
-final int step1 = 1;
-final int limit1 = (int) (mostCurrent._lista1.getSize()-1);
-for (_i = (int) (0) ; (step1 > 0 && _i <= limit1) || (step1 < 0 && _i >= limit1); _i = ((int)(0 + _i + step1)) ) {
+final int step1766 = 1;
+final int limit1766 = (int) (mostCurrent._lista1.getSize()-1);
+for (_i = (int) (0); (step1766 > 0 && _i <= limit1766) || (step1766 < 0 && _i >= limit1766); _i = ((int)(0 + _i + step1766))) {
  //BA.debugLineNum = 2753;BA.debugLine="Log(lista1.Get(i))";
 anywheresoftware.b4a.keywords.Common.Log(BA.ObjectToString(mostCurrent._lista1.Get(_i)));
  }
@@ -3636,9 +3631,9 @@ _pos_valor = (int) (((double)(Double.parseDouble(_pos_mod_aux))*4)+20);
 if ((mostCurrent._posicion_mod).equals(BA.NumberToString(mostCurrent._lvdatos.getSize()))) { 
  //BA.debugLineNum = 1046;BA.debugLine="For i=0 To 3";
 {
-final int step15 = 1;
-final int limit15 = (int) (3);
-for (_i = (int) (0) ; (step15 > 0 && _i <= limit15) || (step15 < 0 && _i >= limit15); _i = ((int)(0 + _i + step15)) ) {
+final int step739 = 1;
+final int limit739 = (int) (3);
+for (_i = (int) (0); (step739 > 0 && _i <= limit739) || (step739 < 0 && _i >= limit739); _i = ((int)(0 + _i + step739))) {
  //BA.debugLineNum = 1047;BA.debugLine="lista1.RemoveAt(pos_valor-1)";
 mostCurrent._lista1.RemoveAt((int) (_pos_valor-1));
  }
@@ -3667,9 +3662,9 @@ _borrar_datos((int) (60),(int) (70),(int) (180));
 _test = 0;
  //BA.debugLineNum = 1077;BA.debugLine="For i=0 To lista1.Size-1";
 {
-final int step31 = 1;
-final int limit31 = (int) (mostCurrent._lista1.getSize()-1);
-for (_i = (int) (0) ; (step31 > 0 && _i <= limit31) || (step31 < 0 && _i >= limit31); _i = ((int)(0 + _i + step31)) ) {
+final int step755 = 1;
+final int limit755 = (int) (mostCurrent._lista1.getSize()-1);
+for (_i = (int) (0); (step755 > 0 && _i <= limit755) || (step755 < 0 && _i >= limit755); _i = ((int)(0 + _i + step755))) {
  //BA.debugLineNum = 1079;BA.debugLine="Log(lista1.Get(i))";
 anywheresoftware.b4a.keywords.Common.Log(BA.ObjectToString(mostCurrent._lista1.Get(_i)));
  }
@@ -3790,9 +3785,9 @@ _servo_actual_nombre = "GANCHO/FLAP 5";
 anywheresoftware.b4a.keywords.Common.Log("Servo "+BA.NumberToString(_servo_actual)+"tiempo Actual "+BA.NumberToString(_tiempo_actual1)+" Numero_lineas "+BA.NumberToString(_numerolineas)+"numero lineas-5 "+BA.NumberToString(_num));
  //BA.debugLineNum = 1862;BA.debugLine="For  i= num To  numerolineas-1";
 {
-final int step27 = 1;
-final int limit27 = (int) (_numerolineas-1);
-for (_i = _num ; (step27 > 0 && _i <= limit27) || (step27 < 0 && _i >= limit27); _i = ((int)(0 + _i + step27)) ) {
+final int step1277 = 1;
+final int limit1277 = (int) (_numerolineas-1);
+for (_i = _num; (step1277 > 0 && _i <= limit1277) || (step1277 < 0 && _i >= limit1277); _i = ((int)(0 + _i + step1277))) {
  //BA.debugLineNum = 1864;BA.debugLine="If i<20 Then";
 if (_i<20) { 
  }else {
@@ -4225,9 +4220,9 @@ mostCurrent._lvdatos.getSingleLineLayout().Label.setTextColor(anywheresoftware.b
 mostCurrent._lvdatos.AddSingleLine("GANCHO/FLAP 5   Giro: "+BA.ObjectToString(mostCurrent._lista1.Get((int) (19)))+"  PRE-START");
  //BA.debugLineNum = 1759;BA.debugLine="For i=20 To lista1.Size-1 Step 4";
 {
-final int step111 = (int) (4);
-final int limit111 = (int) (mostCurrent._lista1.getSize()-1);
-for (_i = (int) (20) ; (step111 > 0 && _i <= limit111) || (step111 < 0 && _i >= limit111); _i = ((int)(0 + _i + step111)) ) {
+final int step1197 = (int) (4);
+final int limit1197 = (int) (mostCurrent._lista1.getSize()-1);
+for (_i = (int) (20); (step1197 > 0 && _i <= limit1197) || (step1197 < 0 && _i >= limit1197); _i = ((int)(0 + _i + step1197))) {
  //BA.debugLineNum = 1760;BA.debugLine="tiempo_aux=lista1.Get(i)";
 mostCurrent._tiempo_aux = BA.ObjectToString(mostCurrent._lista1.Get(_i));
  //BA.debugLineNum = 1761;BA.debugLine="tipo_tiempo_aux=lista1.Get(i+1)";
@@ -4312,8 +4307,6 @@ mostCurrent._ime1.HideKeyboard(mostCurrent.activityBA);
 mostCurrent._panel1.setVisible(anywheresoftware.b4a.keywords.Common.True);
  //BA.debugLineNum = 1816;BA.debugLine="Label5.Visible=True";
 mostCurrent._label5.setVisible(anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 1817;BA.debugLine="lbNumeroServo.Visible=True";
-mostCurrent._lbnumeroservo.setVisible(anywheresoftware.b4a.keywords.Common.True);
  //BA.debugLineNum = 1820;BA.debugLine="etGiro.Enabled=False";
 mostCurrent._etgiro.setEnabled(anywheresoftware.b4a.keywords.Common.False);
  //BA.debugLineNum = 1821;BA.debugLine="etTiempo.Enabled=False";
@@ -4321,8 +4314,8 @@ mostCurrent._ettiempo.setEnabled(anywheresoftware.b4a.keywords.Common.False);
  //BA.debugLineNum = 1822;BA.debugLine="spTiempo.Enabled=False";
 mostCurrent._sptiempo.setEnabled(anywheresoftware.b4a.keywords.Common.False);
  } 
-       catch (Exception e1249) {
-			processBA.setLastException(e1249); };
+       catch (Exception e1248) {
+			processBA.setLastException(e1248); };
  //BA.debugLineNum = 1829;BA.debugLine="End Sub";
 return "";
 }

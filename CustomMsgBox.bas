@@ -1,5 +1,5 @@
 ﻿Type=Class
-Version=5.5
+Version=5.2
 ModulesStructureVersion=1
 B4A=true
 @EndOfDesignText@
@@ -268,7 +268,7 @@ Public Sub ShowSeparators(TitleSeparator As Int, ButtonSeparator As Int)
 							LineSeparator.DrawLine(0dip, 65dip, 100%x, 65dip, TitleSeparator, 3)
 							LineSeparator.DrawLine(0dip, YesButtonPanel.Top - 2dip, 100%x, YesButtonPanel.Top - 2dip, ButtonSeparator, 1)
 							
-							If MsgNumberOfButtons = 2 AND MsgOrientation.ToUpperCase <> "V" Then
+							If MsgNumberOfButtons = 2 And MsgOrientation.ToUpperCase <> "V" Then
 
 										LineSeparator.DrawLine(Panel.Width / 2, YesButtonPanel.Top - 2dip, Panel.Width / 2, Panel.Height, ButtonSeparator, 1)
 							
@@ -278,7 +278,7 @@ Public Sub ShowSeparators(TitleSeparator As Int, ButtonSeparator As Int)
 										
 							End If
 							
-							If MsgNumberOfButtons = 3 AND MsgOrientation.ToUpperCase <> "V" Then
+							If MsgNumberOfButtons = 3 And MsgOrientation.ToUpperCase <> "V" Then
 
 										LineSeparator.DrawLine(Panel.Width / 3, YesButtonPanel.Top - 2dip, Panel.Width / 3, Panel.Height, ButtonSeparator, 1)
 										LineSeparator.DrawLine(Panel.Width / 3 + YesButtonPanel.Width + 3dip, YesButtonPanel.Top - 2dip, Panel.Width / 3 + YesButtonPanel.Width + 3dip, Panel.Height, ButtonSeparator, 1)

@@ -1,0 +1,141 @@
+﻿Version=5.2
+NumberOfModules=7
+Module1=F1A
+Module2=ClsExplorer
+Module3=ClsCheckList
+Module4=F1C
+Module5=F1B
+Module6=CustomListView
+Module7=CustomMsgBox
+Build1=Default,com.delozoya.Consola.Completa
+ManifestCode='This code will be applied to the manifest file during compilation.~\n~'You do not need to modify it in most cases.~\n~'See this link for for more information: http://www.basic4ppc.com/forum/showthread.php?p=78136~\n~AddManifestText(~\n~<uses-sdk android:minSdkVersion="4" android:targetSdkVersion="14"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>)~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~'End of default text.~\n~AddActivityText(main, <intent-filter>~\n~        <action android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED" />~\n~    </intent-filter>~\n~    <meta-data android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED"~\n~        android:resource="@xml/device_filter" />)~\n~
+IconFile=
+NumberOfFiles=9
+File1=1
+File2=1.bal
+File3=2.png
+File4=f1a.bal
+File5=f1c.bal
+File6=f1c1.bal
+File7=f1c1_1.bal
+File8=fic1tablet.bal
+File9=LOWRB___.TTF
+NumberOfLibraries=11
+Library1=core
+Library2=randomaccessfile
+Library3=animation
+Library4=reflection
+Library5=phone
+Library6=dialogs
+Library7=usbserial
+Library8=richstring
+Library9=scrollview2d
+Library10=stringutils
+Library11=ime
+@EndOfDesignText@
+#Region  Project Attributes 
+	#ApplicationLabel: CONSOLA 2.0
+	#VersionCode: 1
+	#VersionName: 
+	'SupportedOrientations possible values: unspecified, landscape or portrait.
+	#SupportedOrientations: LANDSCAPE
+	#CanInstallToExternalStorage: False
+#End Region
+
+#Region  Activity Attributes 
+	#FullScreen: False
+	#IncludeTitle: True
+#End Region
+
+Sub Process_Globals
+	'These global variables will be declared once when the application starts.
+	'These variables can be accessed from all modules.
+End Sub
+
+Sub Globals
+	'These global variables will be redeclared each time the activity is created.
+	'These variables can only be accessed from this module.
+Dim msg As CustomMsgBox
+
+End Sub
+
+Sub Activity_Create(FirstTime As Boolean)
+Log("flag maincrea: "&F1B.flag)
+File.MakeDir(File.DirRootExternal , "Consola")
+If F1B.flag=1 Then
+ExitApplication
+
+End If
+Activity.Color=Colors.White
+Dim result1 As String
+Dim result As Int
+'msg.Initialize(Activity,Me,"msg","H",3,60%x, 200dip,Null)
+'msg.Title.Text = "Modelo Avion"
+'				msg.Title.textColor = Colors.black
+'				msg.Title.TextSize=20
+'				msg.Panel.Color=Colors.White
+'				msg.ShowSeparators(Colors.black, Colors.black)
+'				
+'				  msg.YesButtonPanel.Color = Colors.White
+'		  msg.NoButtonPanel.Color = Colors.White
+'				msg.CancelButtonPanel.Color = Colors.White
+'				
+'				msg.YesButtonCaption.TextColor=Colors.Black
+'				msg.NoButtonCaption.TextColor=Colors.Black
+'				msg.CancelButtonCaption.TextColor=Colors.Black
+'				msg.YesButtonCaption.Text="F1-A"
+'				msg.NoButtonCaption.Text="F1-B"
+'				msg.CancelButtonCaption.Text="F1-C"
+'				
+'				msg.ShowMessage("Elegir Modelo del avion","C")
+				
+		
+
+	result = Msgbox2("Elige el modelo del avion","Modelo Avion","F1-C","F1-B","F1-A",Null)
+	If result= DialogResponse.POSITIVE Then
+	'ToastMessageShow("MODELO F1-C",True)
+		Activity.Finish
+	StartActivity(F1C)
+	End If
+	
+	
+	If result= DialogResponse.NEGATIVE Then
+'	ToastMessageShow("MODELO F1-A",True)
+	Activity.Finish
+	StartActivity(F1A)
+	End If
+	
+	If result= DialogResponse.CANCEL Then
+		'ToastMessageShow("MODELO F1-B",True)
+		StartActivity(F1B)
+	End If
+	
+End Sub
+
+Sub Activity_Resume
+Log("flag main resume f1b: "&F1B.flag)
+Log("flag main resume f1A: "&F1A.flag)
+Log("flag main resume f1C: "&F1C.flag)
+If (F1A.flag=1 Or F1B.flag=1 Or F1C.flag=1) Then
+	Log("flag main exit: "&F1B.flag)
+
+	ExitApplication
+	
+End If
+
+If F1B.flag=2 Or F1A.flag=2 Or F1C.flag=2 Then
+Log("flag maincrea: "&F1B.flag)
+Activity_Create(True)
+End If
+End Sub
+
+Sub Activity_Pause (UserClosed As Boolean)
+'exitapplication
+End Sub
+'
+'Sub msg_Click
+'Dim result1 As String
+'	result1=	msg.ButtonSelected
+'	Log(result1)
+'End Sub
+'

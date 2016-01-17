@@ -1,5 +1,5 @@
 ﻿Type=Class
-Version=5.5
+Version=5.2
 ModulesStructureVersion=1
 B4A=true
 @EndOfDesignText@
@@ -267,7 +267,7 @@ Private Sub AddToSV(pnl As Panel, pnlHeight As Int, WithEvents As Boolean)
 	' Ajout du panel et agrandissement de la hauteur du ScrollView
 	sv.Panel.AddView(pnl, 0, svHeight, getWidth, pnlHeight)
 	svHeight = svHeight + pnl.Height
-
+	
 	' Affectation des événements Touch, Click et LongClick
 	If Not(WithEvents) Then Return
 	Dim r As Reflector
@@ -290,7 +290,7 @@ End Sub
 ' Last position = NumberOfItems-1
 ' The final position is just before EndPosition. If you want to move an item after the last position, EndPosition must be set to NumberOfItems.
 Public Sub MoveItem(StartPosition As Int, EndPosition As Int)
-	If sv.IsInitialized AND StartPosition <> EndPosition Then
+	If sv.IsInitialized And StartPosition <> EndPosition Then
 		If HasExtraContent Then CollapseItem
 		StartPosition = Max(0, Min(StartPosition, NumberOfItems - 1))
 		EndPosition = Max(0, Min(EndPosition, NumberOfItems))
@@ -351,7 +351,7 @@ End Sub
 
 ' Swaps the position of the given items
 Public Sub SwapItems(PosItem1 As Int, PosItem2 As Int)
-	If sv.IsInitialized AND PosItem1 <> PosItem2 Then
+	If sv.IsInitialized And PosItem1 <> PosItem2 Then
 		If HasExtraContent Then CollapseItem
 		Dim PosMin, PosMax As Int
 		PosMin = Min(PosItem1, PosItem2)

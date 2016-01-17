@@ -1,5 +1,5 @@
 ﻿Type=Activity
-Version=5.5
+Version=5.2
 ModulesStructureVersion=1
 B4A=true
 @EndOfDesignText@
@@ -51,7 +51,7 @@ Sub Globals
 	
 	
 	
-			Dim contador As Int
+	Dim contador As Int
 	Dim buffer_tx(512) As Byte
 	
 	Dim valor_d As Byte
@@ -85,11 +85,11 @@ Sub Globals
 	
 	Dim tiempo_aux As String
 	Dim tipo_tiempo_aux As String
-		Dim tipo_tiempo_aux1 As String
+	Dim tipo_tiempo_aux1 As String
 
 	Dim giro_aux As String
 	Dim servo_aux As String
-		Dim servo_aux_nombre As String
+	Dim servo_aux_nombre As String
 	
 	Private Label4 As Label
 	Private Label2 As Label
@@ -133,12 +133,12 @@ Sub Globals
 	Dim tiempo_actual As Int
 	Dim tiempo_repite As Boolean
 	Private Label5 As Label
-		Dim tim As Timer
+	Dim tim As Timer
 	Private lbservotxt As Label
-		Private btLeer As Button
+	Private btLeer As Button
 	Private cbled As CheckBox
 	
-		Dim nombre_leido As String
+	Dim nombre_leido As String
 	
 	
 	Dim flag_lectura As Boolean=False
@@ -160,32 +160,32 @@ Sub Activity_Create(FirstTime As Boolean)
 		ime1.SetCustomFilter(etTiempo,etTiempo.INPUT_TYPE_DECIMAL_NUMBERS,"0123456789")
 	ime1.SetCustomFilter(etGiro,etGiro.INPUT_TYPE_DECIMAL_NUMBERS,"0123456789")
 	'End If
-'OJO ESTA SUBRUTINA BORRA TODO DirRootExternal & "F1_B" & "F1_B	
+	'OJO ESTA SUBRUTINA BORRA TODO DirRootExternal & "F1_B" & "F1_B	
 
-'borrar
-'------------------------------------------------
-directorio=File.DirRootExternal & "/Consola"
-File.MakeDir(File.DirRootExternal & "/Consola","F1C")
-File.MakeDir(File.DirRootExternal & "/Consola/F1C","configuracion")
-BC1.Initialize(Colors.White,5)
-ime1.Initialize("")
-InitPanel(Panel1,3,Colors.White,Colors.Black)
-InitPanel(Panel2,3,Colors.White,Colors.Black)
-InitPanel(Panel3,3,Colors.White,Colors.Black)
-InitPanel(Panel4,3,Colors.White,Colors.Black)
-label10.Text="F1-C"
+	'borrar
+	'------------------------------------------------
+	directorio=File.DirRootExternal & "/Consola"
+	File.MakeDir(File.DirRootExternal & "/Consola","F1C")
+	File.MakeDir(File.DirRootExternal & "/Consola/F1C","configuracion")
+	BC1.Initialize(Colors.White,5)
+	ime1.Initialize("")
+	InitPanel(Panel1,3,Colors.White,Colors.Black)
+	InitPanel(Panel2,3,Colors.White,Colors.Black)
+	InitPanel(Panel3,3,Colors.White,Colors.Black)
+	InitPanel(Panel4,3,Colors.White,Colors.Black)
+	label10.Text="F1-C"
 
-BC.Initialize(Colors.Blue,5)
+	BC.Initialize(Colors.Blue,5)
 
 
-spServo.Add("PULSE AQUI")
-spServo.Add("C.I.ALA")
-spServo.Add("MOTOR")
-spServo.Add("STABILO")
-spServo.Add("TIMON")
-spServo.Add("FLAP|FOLDER")
-'spServo.DropdownBackgroundColor=Colors.Red
-'spServo.Background=BC
+	spServo.Add("PULSE AQUI")
+	spServo.Add("C.I.ALA")
+	spServo.Add("MOTOR")
+	spServo.Add("STABILO")
+	spServo.Add("TIMON")
+	spServo.Add("FLAP|FOLDER")
+	'spServo.DropdownBackgroundColor=Colors.Red
+	'spServo.Background=BC
 	spTiempo.Add("PULSE AQUI")
 	spTiempo.Add("DECIMAS")
 	spTiempo.Add("SEGUNDOS")
@@ -193,9 +193,9 @@ spServo.Add("FLAP|FOLDER")
 	
 	spconfig.Add("PULSE AQUI")
 	spconfig.Add("PRUEBA")
-	spconfig.Add("PRIMERA HORA")
-	spconfig.Add("VIENTO ALTO")
-	spconfig.Add("VIENTO MEDIO")
+	spconfig.Add("1ª.HORA")
+	spconfig.Add("V.ALTO")
+	spconfig.Add("V.MEDIO")
 	spconfig.Add("CALMA")
 	spconfig.Add("TERMICA")
 	spconfig.TextSize=23
@@ -223,16 +223,16 @@ spServo.Add("FLAP|FOLDER")
 	lbservotxt.Text="C.I.ALA"
 	servo=lbNumeroServo.Text
 	contador_lineas=1
-			lista1.Initialize
-			listaconfiguracion.Initialize2(Array As String("0","nombre"))
-			listaconfiguracion.Set(1,NOMBRE_FICHERO)
-				File.WriteList(File.DirRootExternal & "/Consola/F1C/configuracion","Modelo_F1C_"&NOMBRE_FICHERO,listaconfiguracion)
+	lista1.Initialize
+	listaconfiguracion.Initialize2(Array As String("0","nombre"))
+	listaconfiguracion.Set(1,NOMBRE_FICHERO)
+	File.WriteList(File.DirRootExternal & "/Consola/F1C/configuracion","Modelo_F1C_"&NOMBRE_FICHERO,listaconfiguracion)
 
-'elegir_modelo
-etGiro.Enabled=False
-spconfig.Enabled=False
-lbModelo.Text="PULSE AQUI"
-openusb
+	'elegir_modelo
+	etGiro.Enabled=False
+	spconfig.Enabled=False
+	lbModelo.Text="PULSE AQUI"
+	openusb
 Catch
 
 End Try
@@ -240,42 +240,42 @@ End Sub
 
 Sub ficheronuevo
 Try
-ime1.HideKeyboard
-spconfig.Enabled=True
-If strspinner="PULSE AQUI" Then
-
-spconfig.SelectedIndex=0
-
-End If
-lvDatos.CLEAR
-lbModelo.Text=strfichero
-Panel1.Visible=False
-		spServo.Visible=False
-		spTiempo.Visible=False
-		Label2.Visible=False
-		Panel3.Visible=False
-		Label4.Visible=False
-		Panel4.Visible=False
-		etTiempo.Visible=False
-		Label9.Visible=False
-		Label8.Visible=False 
-			Panel2.Visible=False
+	ime1.HideKeyboard
+	spconfig.Enabled=True
+	
+	If strspinner="PULSE AQUI" Then
+		spconfig.SelectedIndex=0
+	End If
+	
+	lvDatos.CLEAR
+	lbModelo.Text=strfichero
+	Panel1.Visible=False
+	spServo.Visible=False
+	spTiempo.Visible=False
+	Label2.Visible=False
+	Panel3.Visible=False
+	Label4.Visible=False
+	Panel4.Visible=False
+	etTiempo.Visible=False
+	Label9.Visible=False
+	Label8.Visible=False 
+	Panel2.Visible=False
 	Label5.Visible=False
 	lbNumeroServo.Visible=False
 	lbservotxt.Visible=False
 	tiempo_minimo=0
-		lbNumeroServo.Text="C.I.ALA"
-		lbservotxt.Text="C.I.ALA"
-		btOK.Enabled=False
-		btOK.Visible=False
-		Button1.Enabled=False
-		Button1.Visible=False
-		Button2.Visible=False
-		Button2.Enabled=False
-		etGiro.Enabled=False
-				btOK.Visible=False
-		'etGiro.Enabled=True
-		tiempo_actual=0
+	lbNumeroServo.Text="C.I.ALA"
+	lbservotxt.Text="C.I.ALA"
+	btOK.Enabled=False
+	btOK.Visible=False
+	Button1.Enabled=False
+	Button1.Visible=False
+	Button2.Visible=False
+	Button2.Enabled=False
+	etGiro.Enabled=False
+	btOK.Visible=False
+	'etGiro.Enabled=True
+	tiempo_actual=0
 Catch
 
 End Try
@@ -291,26 +291,26 @@ Try
 	
 	'Else
 	Log("abro fichero")
-NOMBRE_FICHERO=strfichero
- etFichero.Text=NOMBRE_FICHERO
-numpos=NOMBRE_FICHERO.IndexOf(" ")
-ToastMessageShow(NOMBRE_FICHERO,True)
+	NOMBRE_FICHERO=strfichero
+ 	etFichero.Text=NOMBRE_FICHERO
+	numpos=NOMBRE_FICHERO.IndexOf(" ")
+	ToastMessageShow(NOMBRE_FICHERO,True)
 
 
 
 
 
-ToastMessageShow(numpos,True)
+	ToastMessageShow(numpos,True)
 	If strspinner="PRUEBA" Then
 		spconfig.SelectedIndex=1
 	End If 
-	If strspinner="PRIMERA HORA" Then
+	If strspinner="1ª.HORA" Then
 		spconfig.SelectedIndex=2
 	End If 
-	If strspinner="VIENTO ALTO" Then
+	If strspinner="V.ALTO" Then
 		spconfig.SelectedIndex=3
 	End If 
-		If strspinner="VIENTO MEDIO" Then
+		If strspinner="V.MEDIO" Then
 		spconfig.SelectedIndex=4
 	End If 
 	If strspinner="CALMA" Then
@@ -322,48 +322,45 @@ ToastMessageShow(numpos,True)
 	
 	
 		
-		If File.Exists(File.DirRootExternal & "/Consola/F1C","Modelo_F1C_"&NOMBRE_FICHERO)=True Then
-	
-	
-			lbModelo.Text=NOMBRE_FICHERO
-			strModelo="Modelo_F1C_"&NOMBRE_FICHERO
-	lista1=File.ReadList(File.DirRootExternal & "/Consola/F1C","Modelo_F1C_"&NOMBRE_FICHERO)
-	listaconfiguracion=File.ReadList(File.DirRootExternal & "/Consola/F1C/configuracion","Modelo_F1C_"&NOMBRE_FICHERO)
-	lvDatos.Clear
-	
-	
-	If listaconfiguracion.Get(0)="0" Then
-		cbled.Checked=False
-	End If
-	
-	If listaconfiguracion.Get(0)="1" Then
-		cbled.Checked=True
-	End If
+	If File.Exists(File.DirRootExternal & "/Consola/F1C","Modelo_F1C_"&NOMBRE_FICHERO)=True Then
+		lbModelo.Text=NOMBRE_FICHERO
+		strModelo="Modelo_F1C_"&NOMBRE_FICHERO
+		lista1=File.ReadList(File.DirRootExternal & "/Consola/F1C","Modelo_F1C_"&NOMBRE_FICHERO)
+		listaconfiguracion=File.ReadList(File.DirRootExternal & "/Consola/F1C/configuracion","Modelo_F1C_"&NOMBRE_FICHERO)
+		lvDatos.Clear
+
+		If listaconfiguracion.Get(0)="0" Then
+			cbled.Checked=False
+		End If
+		
+		If listaconfiguracion.Get(0)="1" Then
+			cbled.Checked=True
+		End If
 			'For i=0 To 4
-			    lvDatos.SingleLineLayout.Label.TextColor=Colors.Black
-				lvDatos.AddSingleLine("C.INCI.ALAS 1   Giro: "&lista1.Get(0)&"  INICIO")
-				  lvDatos.SingleLineLayout.Label.TextColor=Colors.Black
-				lvDatos.AddSingleLine("CORTE.MOTOR 2   Giro: "&lista1.Get(1)&"  INICIO")
-				  lvDatos.SingleLineLayout.Label.TextColor=Colors.Black
-				lvDatos.AddSingleLine("INC.STABILO 3   Giro: "&lista1.Get(2)&"  INICIO")
-				  lvDatos.SingleLineLayout.Label.TextColor=Colors.Black
-				lvDatos.AddSingleLine("TIMON DIREC 4   Giro: "&lista1.Get(3)&"  INICIO")
-				  lvDatos.SingleLineLayout.Label.TextColor=Colors.Black
-				lvDatos.AddSingleLine("FLAP-FOLDER 5   Giro: "&lista1.Get(4)&"  INICIO")
+	    lvDatos.SingleLineLayout.Label.TextColor=Colors.Black
+		lvDatos.AddSingleLine("C.INCI.ALAS 1   Giro: "&lista1.Get(0)&"  INICIO")
+		lvDatos.SingleLineLayout.Label.TextColor=Colors.Black
+		lvDatos.AddSingleLine("CORTE.MOTOR 2   Giro: "&lista1.Get(1)&"  INICIO")
+		lvDatos.SingleLineLayout.Label.TextColor=Colors.Black
+		lvDatos.AddSingleLine("INC.STABILO 3   Giro: "&lista1.Get(2)&"  INICIO")
+		lvDatos.SingleLineLayout.Label.TextColor=Colors.Black
+		lvDatos.AddSingleLine("TIMON DIREC 4   Giro: "&lista1.Get(3)&"  INICIO")
+		lvDatos.SingleLineLayout.Label.TextColor=Colors.Black
+		lvDatos.AddSingleLine("FLAP-FOLDER 5   Giro: "&lista1.Get(4)&"  INICIO")
 				
 		'	Next
 			
 		'	For i=5 To 9 
-							    lvDatos.SingleLineLayout.Label.TextColor=Colors.Black
-				lvDatos.AddSingleLine("C.INCI.ALAS 1   Giro: "&lista1.Get(5)&"  RDT")
-				  lvDatos.SingleLineLayout.Label.TextColor=Colors.Black
-				lvDatos.AddSingleLine("CORTE.MOTOR 2   Giro: "&lista1.Get(6)&"  RDT")
-				  lvDatos.SingleLineLayout.Label.TextColor=Colors.Black
-				lvDatos.AddSingleLine("INC.STABILO 3   Giro: "&lista1.Get(7)&"  RDT")
-				  lvDatos.SingleLineLayout.Label.TextColor=Colors.Black
-				lvDatos.AddSingleLine("TIMON DIREC 4   Giro: "&lista1.Get(8)&"  RDT")
-				  lvDatos.SingleLineLayout.Label.TextColor=Colors.Black
-				lvDatos.AddSingleLine("FLAP-FOLDER 5   Giro: "&lista1.Get(9)&"  RDT")
+		lvDatos.SingleLineLayout.Label.TextColor=Colors.Black
+		lvDatos.AddSingleLine("C.INCI.ALAS 1   Giro: "&lista1.Get(5)&"  RDT")
+		lvDatos.SingleLineLayout.Label.TextColor=Colors.Black
+		lvDatos.AddSingleLine("CORTE.MOTOR 2   Giro: "&lista1.Get(6)&"  RDT")
+		lvDatos.SingleLineLayout.Label.TextColor=Colors.Black
+		lvDatos.AddSingleLine("INC.STABILO 3   Giro: "&lista1.Get(7)&"  RDT")
+		lvDatos.SingleLineLayout.Label.TextColor=Colors.Black
+		lvDatos.AddSingleLine("TIMON DIREC 4   Giro: "&lista1.Get(8)&"  RDT")
+		lvDatos.SingleLineLayout.Label.TextColor=Colors.Black
+		lvDatos.AddSingleLine("FLAP-FOLDER 5   Giro: "&lista1.Get(9)&"  RDT")
 			'Next
 			
 			Log("Tamaño Lista "&lista1.Size)
@@ -377,17 +374,14 @@ ToastMessageShow(numpos,True)
 				
 				If tipo_tiempo_aux=0 Then
 					tiempo_minimo=tiempo_minimo
-				
 				End If
 				
 				If tipo_tiempo_aux=1 Then
-					tiempo_minimo=tiempo_minimo*10
-				
+					tiempo_minimo=tiempo_minimo*10		
 				End If
 				
 				If tipo_tiempo_aux=2 Then
 					tiempo_minimo=tiempo_minimo*600
-				
 				End If
 				
 				
@@ -427,34 +421,34 @@ ToastMessageShow(numpos,True)
 				lvDatos.AddSingleLine(servo_aux_nombre&"   Giro: "&giro_aux&"    Tiempo: "&tiempo_aux&"  Tipo tiempo: "&tipo_tiempo_aux)
 			
 			Next
-		spServo.Visible=True
-		spTiempo.Visible=True
-		Label2.Visible=True
-		Panel3.Visible=True
-		Label4.Visible=True
-		Panel4.Visible=True
-		etTiempo.Visible=True
-		Label9.Visible=False
-		Label8.Visible=False 
-		lbNumeroServo.Text=""
-		lbservotxt.Text=""
-		btOK.Enabled=False
-		btOK.Visible=False
-		Button1.Enabled=True
-		Button1.Visible=True
-		contador_lineas=12
-		Panel1.Visible=True
-				Button1.Enabled=False
-		Button1.Visible=True
-		spTiempo.Enabled=False
-		etTiempo.Enabled=False
-		etGiro.Enabled=False
-	Panel2.Visible=True
-	Label5.Visible=True
-	lbNumeroServo.Visible=False'true
-	lbservotxt.Visible=True
+			spServo.Visible=True
+			spTiempo.Visible=True
+			Label2.Visible=True
+			Panel3.Visible=True
+			Label4.Visible=True
+			Panel4.Visible=True
+			etTiempo.Visible=True
+			Label9.Visible=False
+			Label8.Visible=False 
+			lbNumeroServo.Text=""
+			lbservotxt.Text=""
+			btOK.Enabled=False
+			btOK.Visible=False
+			Button1.Enabled=True
+			Button1.Visible=True
+			contador_lineas=12
+			Panel1.Visible=True
+			Button1.Enabled=False
+			Button1.Visible=True
+			spTiempo.Enabled=False
+			etTiempo.Enabled=False
+			etGiro.Enabled=False
+			Panel2.Visible=True
+			Label5.Visible=True
+			lbNumeroServo.Visible=False'true
+			lbservotxt.Visible=True
 	
-	End If	
+		End If	
 	
 
 	
@@ -708,12 +702,12 @@ If posicion_mod<10 Then
 			lista1.set(posicion_mod,aux_valor_giro)
 		End If
 
-	spServo.Visible=True
+		spServo.Visible=True
 		spTiempo.Visible=True
 		Label2.Visible=True
 		Panel3.Visible=True
 		Label4.Visible=True
-	Panel4.Visible=True
+		Panel4.Visible=True
 		etTiempo.Visible=True
 		Label8.Visible=False
 		Button1.Enabled=False
@@ -841,31 +835,31 @@ End Sub
 
 Sub lvDatos_ItemClick (Position As Int, Value As Object)
 Try
-tiempo_ante_lv=0
+	tiempo_ante_lv=0
 	Button2.Enabled=True
-Button2.Visible=True
-Button1.Enabled=False
-Button1.Visible=False
-btOK.Enabled=False
-btOK.Visible=False
-Dim str As String
-Label8.Visible=False
-Label9.Visible=False
-etGiro.Enabled=True
-etTiempo.Enabled=True
-spTiempo.Enabled=True
-Panel2.Visible=True
-Dim lv_tipo As String
-Dim lv_tipo1  As Int
+	Button2.Visible=True
+	Button1.Enabled=False
+	Button1.Visible=False
+	btOK.Enabled=False
+	btOK.Visible=False
+	Dim str As String
+	Label8.Visible=False
+	Label9.Visible=False
+	etGiro.Enabled=True
+	etTiempo.Enabled=True
+	spTiempo.Enabled=True
+	Panel2.Visible=True
+	Dim lv_tipo As String
+	Dim lv_tipo1  As Int
 
 
 
 	If Position<=4 Then
 		Button2.Enabled=True
-Button2.Visible=True
-	Label5.Visible=True
-	lbNumeroServo.Visible=False'true
-	lbservotxt.Visible=True
+		Button2.Visible=True
+		Label5.Visible=True
+		lbNumeroServo.Visible=False'true
+		lbservotxt.Visible=True
 		spServo.Visible=False
 		Panel1.Visible=False
 		spTiempo.Visible=False
@@ -884,20 +878,20 @@ Button2.Visible=True
 		lbNumeroServo.text=servo_lv
 		
 			If servo_lv=1 Then
-					lbservotxt.Text="C.I.ALA"
-				End If 
-				If servo_lv=2 Then
-					lbservotxt.Text="MOTOR"
-				End If 
-				If servo_lv=3 Then
-					lbservotxt.Text="STABILO"
-				End If 
-				If servo_lv=4 Then
-					lbservotxt.Text="TIMON DIREC"
-				End If 
-				If servo_lv=5 Then
+				lbservotxt.Text="C.I.ALA"
+			End If 
+			If servo_lv=2 Then
+				lbservotxt.Text="MOTOR"
+			End If 
+			If servo_lv=3 Then
+				lbservotxt.Text="STABILO"
+			End If 
+			If servo_lv=4 Then
+				lbservotxt.Text="TIMON DIREC"
+			End If 
+			If servo_lv=5 Then
 				lbservotxt.Text="FLAP-FOLDER"
-				End If 
+			End If 
 		
 		Log("giro_lv: "&giro_lv)
 				If giro_lv<=9 Then
@@ -1575,6 +1569,7 @@ If tiempo_actual>tiempo_ante_lv Then
 '					mod_datos_button2
 '					ret=False
 '				End If
+				Log("Tiempo actual es menor que el posteriosr comprobamos el anterior")
 				mod_datos_button2
 			Else
 					Msgbox("Tiempo actual mayor que el posterior!!!!!","ERROR")
@@ -1626,9 +1621,14 @@ Dim aux_valor_giro As String
 Dim pos_valor As Int
 Dim pos_mod_aux As String
 Dim aux_valor_giro_inicio As String
+
+Log("Funcion ModDatosButton2")
+
+Log("posicion modificar: "&posicion_mod)
+
 If tipo_tiempo="DECIMAS" Then
-tiempo=tiempo
-Log("Tiempo Actual decimas: "&tiempo)
+	tiempo=tiempo
+	Log("Tiempo Actual decimas: "&tiempo)
 End If 
 
 'If tipo_tiempo="SEGUNDOS" Then
@@ -1643,24 +1643,24 @@ End If
 
 If posicion_mod<20 Then
 	If posicion_mod>=10 Then
-	If tipo_tiempo="SEGUNDOS" Then
-tiempo=tiempo/10
-Log("Tiempo Actual segundos : "&tiempo)
-End If 
-If tipo_tiempo="MINUTOS" Then
-tiempo=tiempo/600
-Log("Tiempo Actual minutos: "&tiempo)
-End If
+		If tipo_tiempo="SEGUNDOS" Then
+			tiempo=tiempo/10
+			Log("Tiempo Actual segundos : "&tiempo)
+		End If 
+		If tipo_tiempo="MINUTOS" Then
+			tiempo=tiempo/600
+		Log("Tiempo Actual minutos: "&tiempo)
+		End If
 
-		pos_mod_aux=posicion_mod.SubString2(1,2)
-		pos_valor=(pos_mod_aux*4)+10
+	pos_mod_aux=posicion_mod.SubString2(1,2)
+	pos_valor=(pos_mod_aux*4)+10
 '	ToastMessageShow("Linea: "&posicion_mod&" Unidad: "&pos_mod_aux&" Valor en lista: "&pos_valor,True)
 	
-		If tiempo<=9 Then
-			'aux_valor_tiempo="00"&tiempo
-	aux_valor_tiempo="00"&tiempo
-			lista1.Set(pos_valor,aux_valor_tiempo)
-		End If
+	If tiempo<=9 Then
+		'aux_valor_tiempo="00"&tiempo
+		aux_valor_tiempo="00"&tiempo
+		lista1.Set(pos_valor,aux_valor_tiempo)
+	End If
 
 		If tiempo <=99 Then
 			If tiempo>9 Then
@@ -1709,6 +1709,31 @@ End If
 		If giro >99 Then
 			lista1.set(pos_valor+3,giro)
 		End If
+		
+		tiempo_minimo=aux_valor_tiempo
+		Button2.Enabled=False
+		Button2.Visible=False
+		Button1.Enabled=True
+		Button1.Visible=True
+
+
+		lbNumeroServo.Text=""
+		lbservotxt.Text=""
+		spServo.SelectedIndex=0
+		etGiro.Text=""
+		etTiempo.Text=""
+		spTiempo.SelectedIndex=0
+		spServo.Background=BC1
+		ime1.HideKeyboard
+		Panel1.Visible=True
+		Label5.Visible=True
+		lbNumeroServo.Visible=False'true
+		lbservotxt.Visible=True
+		
+		
+		etGiro.Enabled=False
+		etTiempo.Enabled=False
+		spTiempo.Enabled=False
 	
 	End If
 End If
@@ -1722,7 +1747,7 @@ mod_datos(40,50,130)
 mod_datos(50,60,170)
 
 
-
+Log("alimos de mod_datos")
 
 
 
@@ -1732,41 +1757,29 @@ mod_datos(50,60,170)
 	lvDatos.Clear
 	
 	
-'	
-'	
-'				For i=0 To 4
-'			    lvDatos.SingleLineLayout.Label.TextColor=Colors.Black
-'				lvDatos.AddSingleLine("Servo "&(i+1)&"   Giro: "&lista1.Get(i)&"  INICIO")
-'			Next
-'			
-'			For i=5 To 9 
-'			    lvDatos.SingleLineLayout.Label.TextColor=Colors.Black
-'				lvDatos.AddSingleLine("Servo "&(i-4)&"   Giro: "&lista1.Get(i)&"  RDT")
-'			Next
-				'For i=0 To 4
 			    lvDatos.SingleLineLayout.Label.TextColor=Colors.Black
 				lvDatos.AddSingleLine("C.INCI.ALAS 1   Giro: "&lista1.Get(0)&"  INICIO")
-				  lvDatos.SingleLineLayout.Label.TextColor=Colors.Black
+				lvDatos.SingleLineLayout.Label.TextColor=Colors.Black
 				lvDatos.AddSingleLine("CORTE.MOTOR 2   Giro: "&lista1.Get(1)&"  INICIO")
-				  lvDatos.SingleLineLayout.Label.TextColor=Colors.Black
+				lvDatos.SingleLineLayout.Label.TextColor=Colors.Black
 				lvDatos.AddSingleLine("INC.STABILO 3   Giro: "&lista1.Get(2)&"  INICIO")
-				  lvDatos.SingleLineLayout.Label.TextColor=Colors.Black
+				lvDatos.SingleLineLayout.Label.TextColor=Colors.Black
 				lvDatos.AddSingleLine("TIMON DIREC 4   Giro: "&lista1.Get(3)&"  INICIO")
-				  lvDatos.SingleLineLayout.Label.TextColor=Colors.Black
+				lvDatos.SingleLineLayout.Label.TextColor=Colors.Black
 				lvDatos.AddSingleLine("FLAP-FOLDER 5   Giro: "&lista1.Get(4)&"  INICIO")
 				
 			'Next
 			
 			'For i=5 To 9 
-							    lvDatos.SingleLineLayout.Label.TextColor=Colors.Black
+				lvDatos.SingleLineLayout.Label.TextColor=Colors.Black
 				lvDatos.AddSingleLine("C.INCI.ALAS 1   Giro: "&lista1.Get(5)&"  RDT")
-				  lvDatos.SingleLineLayout.Label.TextColor=Colors.Black
+				lvDatos.SingleLineLayout.Label.TextColor=Colors.Black
 				lvDatos.AddSingleLine("CORTE.MOTOR 2   Giro: "&lista1.Get(6)&"  RDT")
-				  lvDatos.SingleLineLayout.Label.TextColor=Colors.Black
+				lvDatos.SingleLineLayout.Label.TextColor=Colors.Black
 				lvDatos.AddSingleLine("INC.STABILO 3   Giro: "&lista1.Get(7)&"  RDT")
-				  lvDatos.SingleLineLayout.Label.TextColor=Colors.Black
+				lvDatos.SingleLineLayout.Label.TextColor=Colors.Black
 				lvDatos.AddSingleLine("TIMON DIREC 4   Giro: "&lista1.Get(8)&"  RDT")
-				  lvDatos.SingleLineLayout.Label.TextColor=Colors.Black
+				lvDatos.SingleLineLayout.Label.TextColor=Colors.Black
 				lvDatos.AddSingleLine("FLAP-FOLDER 5   Giro: "&lista1.Get(9)&"  RDT")
 			
 			For i=10 To lista1.Size-1 Step 4
@@ -1774,7 +1787,7 @@ mod_datos(50,60,170)
 				tipo_tiempo_aux=lista1.Get(i+1)
 				servo_aux=lista1.Get(i+2)
 				
-If servo_aux=1 Then
+				If servo_aux=1 Then
 					servo_aux_nombre="C.INCI.ALAS 1"
 				End If 
 				If servo_aux=2 Then
@@ -1807,30 +1820,8 @@ If servo_aux=1 Then
 				lvDatos.AddSingleLine(servo_aux_nombre&"   Giro: "&giro_aux&"    Tiempo: "&tiempo_aux&"  Tipo tiempo: "&tipo_tiempo_aux)
 '			
 			Next
-tiempo_minimo=aux_valor_tiempo
-	Button2.Enabled=False
-Button2.Visible=False
-Button1.Enabled=True
-Button1.Visible=True
-
-
-lbNumeroServo.Text=""
-lbservotxt.Text=""
-spServo.SelectedIndex=0
-etGiro.Text=""
-etTiempo.Text=""
-spTiempo.SelectedIndex=0
-spServo.Background=BC1
-	ime1.HideKeyboard
-	Panel1.Visible=True
-	Label5.Visible=True
-	lbNumeroServo.Visible=False'true
-	lbservotxt.Visible=True
+			
 	
-	
-	etGiro.Enabled=False
-	etTiempo.Enabled=False
-	spTiempo.Enabled=False
 	
 	
 Catch
@@ -2456,11 +2447,26 @@ Dim aux_valor_giro As String
 Dim pos_valor As Int
 Dim pos_mod_aux As String
 Dim aux_valor_giro_inicio As String
-
-
+	
+	Log("Tiempo: "&tiempo&" TipoTiempo: "&tipo_tiempo&" Giro: "&giro)
+	
+	
 
 If posicion_mod<valor_fin Then
 	If posicion_mod>=valor_ini Then
+		If tipo_tiempo="DECIMAS" Then
+			tiempo=tiempo
+		End If
+		If tipo_tiempo="SEGUNDOS" Then
+			tiempo=tiempo/10
+			Log("Tiempo Actual segundos : "&tiempo)
+		End If 
+		If tipo_tiempo="MINUTOS" Then
+			tiempo=tiempo/600
+			Log("Tiempo Actual minutos: "&tiempo)
+		End If
+
+		Log("Tiempo: "&tiempo&" TipoTiempo: "&tipo_tiempo&" Giro: "&giro)
 		pos_mod_aux=posicion_mod.SubString2(1,2)
 		pos_valor=(pos_mod_aux*4)+valor_sum
 	'ToastMessageShow("Linea: "&posicion_mod&" Unidad: "&pos_mod_aux&" Valor en lista: "&pos_valor,True)
@@ -2473,8 +2479,7 @@ If posicion_mod<valor_fin Then
 		If tiempo <=99 Then
 			If tiempo>9 Then
 				aux_valor_tiempo="0"&tiempo
-
-			lista1.Set(pos_valor,aux_valor_tiempo)
+				lista1.Set(pos_valor,aux_valor_tiempo)
 			End If
 		End If
 
@@ -2495,7 +2500,7 @@ If posicion_mod<valor_fin Then
 			lista1.set(pos_valor+1,"2")
 		End If
 '---------------------------------------	
-	lista1.set(pos_valor+2,servo)
+		lista1.set(pos_valor+2,servo)
 	
 '-----------------------------------------
 		If giro<=9 Then
@@ -2513,6 +2518,31 @@ If posicion_mod<valor_fin Then
 		If giro >99 Then
 			lista1.set(pos_valor+3,giro)
 		End If
+		
+		tiempo_minimo=aux_valor_tiempo
+		Button2.Enabled=False
+		Button2.Visible=False
+		Button1.Enabled=True
+		Button1.Visible=True
+
+
+		lbNumeroServo.Text=""
+		lbservotxt.Text=""
+		spServo.SelectedIndex=0
+		etGiro.Text=""
+		etTiempo.Text=""
+		spTiempo.SelectedIndex=0
+		spServo.Background=BC1
+		ime1.HideKeyboard
+		Panel1.Visible=True
+		Label5.Visible=True
+		lbNumeroServo.Visible=False'true
+		lbservotxt.Visible=True
+		
+		
+		etGiro.Enabled=False
+		etTiempo.Enabled=False
+		spTiempo.Enabled=False
 	
 	End If
 End If
@@ -2656,14 +2686,14 @@ Sub Abrir_Fichero_leido (nombre As String)
 			If nombre.Contains("PRUEBA") Then
 				strspinner="PRUEBA"
 			End If 		
-			If nombre.Contains("PRIMERA HORA") Then
-				strspinner="PRIMERA HORA"
+			If nombre.Contains("1ª.HORA") Then
+				strspinner="1ª.HORA"
 			End If 	
-			If nombre.Contains("VIENTO ALTO") Then
-				strspinner="VIENTO ALTO"
+			If nombre.Contains("V.ALTO") Then
+				strspinner="V.ALTO"
 			End If 	
-			If nombre.Contains("VIENTO MEDIO") Then
-				strspinner="VIENTO MEDIO"
+			If nombre.Contains("V.MEDIO") Then
+				strspinner="V.MEDIO"
 			End If 	
 			If nombre.Contains("CALMA") Then
 				strspinner="CALMA"
